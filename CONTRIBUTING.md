@@ -51,6 +51,15 @@
 5. 在提交合并请求前运行项目规定的全部检查；
 6. 在合并请求中说明变更内容、规范来源、验证方式和潜在影响。
 
+提交前至少运行：
+
+```bash
+python -m pytest
+python scripts/validate_repository.py
+```
+
+未安装 `pytest` 时，可运行 `python -m unittest discover -s tests`。
+
 ## 文档与命名
 
 - 用户文档、规则说明、案例分析和正式示例原则上使用简体中文；

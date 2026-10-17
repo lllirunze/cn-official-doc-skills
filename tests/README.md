@@ -13,6 +13,23 @@ v0.1.0 先使用结构化行为样例验证规则和 Skills，不把固定措辞
 
 `fixtures/core-cases.yaml` 保存39个高风险样例，覆盖 `coverage.yaml` 确定的全部62条首版核心规则。后续自动化测试应验证可观察行为，例如是否识别一文多事、是否拒绝编造文号，而不是匹配模型输出的固定句子。
 
+## 执行
+
+安装开发依赖后运行：
+
+```bash
+python -m pytest
+python scripts/validate_repository.py
+```
+
+未安装 `pytest` 时，也可以使用标准库测试入口：
+
+```bash
+python -m unittest discover -s tests
+```
+
+当前自动化验证规则总数、编号唯一性、复核状态、核心规则覆盖、样例引用、来源门禁、插件结构，以及部分确定性样例的触发条件。需要理解机关关系、语义或写作质量的样例继续依靠人工签核；在目标 Agent 中建立可重复执行的行为评测前，不将其标记为 `automated`。
+
 ## 状态
 
 - `draft`：样例已建立，尚未复核；
