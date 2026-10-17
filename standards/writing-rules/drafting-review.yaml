@@ -12,8 +12,8 @@ rules:
       - source_id: SOURCE-001
         locator: 第十九条第一项
     review:
-      status: extracted
-      reviewed_at: null
+      status: human_approved
+      reviewed_at: "2026-10-17"
 
   - id: WRITING-GENERAL-002
     title: 实事求是与措施可行
@@ -28,8 +28,8 @@ rules:
       - source_id: SOURCE-001
         locator: 第十九条第二项
     review:
-      status: extracted
-      reviewed_at: null
+      status: human_approved
+      reviewed_at: "2026-10-17"
 
   - id: WRITING-GENERAL-003
     title: 内容和表达质量
@@ -43,8 +43,8 @@ rules:
       - source_id: SOURCE-001
         locator: 第十九条第三项
     review:
-      status: extracted
-      reviewed_at: null
+      status: human_approved
+      reviewed_at: "2026-10-17"
 
   - id: WRITING-GENERAL-004
     title: 文种与格式
@@ -59,8 +59,8 @@ rules:
       - source_id: SOURCE-001
         locator: 第十九条第四项
     review:
-      status: extracted
-      reviewed_at: null
+      status: human_approved
+      reviewed_at: "2026-10-17"
 
   - id: WRITING-GENERAL-005
     title: 调研论证和意见征集
@@ -74,8 +74,8 @@ rules:
       - source_id: SOURCE-001
         locator: 第十九条第五项
     review:
-      status: extracted
-      reviewed_at: null
+      status: human_approved
+      reviewed_at: "2026-10-17"
 
   - id: WRITING-GENERAL-006
     title: 跨地区跨部门事项征求意见
@@ -91,8 +91,8 @@ rules:
       - source_id: SOURCE-001
         locator: 第十九条第六项
     review:
-      status: extracted
-      reviewed_at: null
+      status: human_approved
+      reviewed_at: "2026-10-17"
 
   - id: REVIEW-GENERAL-001
     title: 签发前审核范围
@@ -108,5 +108,5 @@ rules:
       - source_id: SOURCE-001
         locator: 第二十条
     review:
-      status: extracted
-      reviewed_at: null
+      status: human_approved
+      reviewed_at: "2026-10-17"

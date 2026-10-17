@@ -32,7 +32,8 @@ rules:
         - deterministic
         - human_review
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-PAPER-SIZE-001
     title: 公文用纸幅面尺寸
@@ -45,7 +46,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-PAGE-MARGIN-001
     title: 页边与版心尺寸
@@ -59,7 +61,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-DEFAULT-FONT-001
     title: 默认字体和字号
@@ -73,7 +76,8 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-LINES-CHARS-001
     title: 每面行数和每行字数
@@ -89,7 +93,8 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-TEXT-COLOR-001
     title: 文字颜色
@@ -102,7 +107,8 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-PLATE-001
     title: 制版质量
@@ -119,7 +125,8 @@ rules:
         - deterministic
         - human_review
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-PRINTING-001
     title: 印刷质量
@@ -137,7 +144,8 @@ rules:
         - deterministic
         - human_review
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-BINDING-001
     title: 通用装订要求
@@ -155,7 +163,8 @@ rules:
         - deterministic
         - human_review
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-BINDING-STAPLE-001
     title: 骑马订和平订要求
@@ -173,7 +182,8 @@ rules:
         - deterministic
         - human_review
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-BINDING-COVER-001
     title: 包本装订要求
@@ -188,4 +198,5 @@ rules:
       mode:
         - human_review
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"

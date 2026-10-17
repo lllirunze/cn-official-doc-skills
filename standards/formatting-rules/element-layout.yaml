@@ -15,7 +15,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-COPY-NUMBER-001
     title: 份号编排
@@ -30,7 +31,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-CLASSIFICATION-001
     title: 密级和保密期限编排
@@ -46,7 +48,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-URGENCY-001
     title: 紧急程度编排
@@ -62,7 +65,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-ORG-MARK-001
     title: 发文机关标志组成和编排
@@ -82,7 +86,8 @@ rules:
         - context_required
         - human_review
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-DOC-NUMBER-001
     title: 发文字号编排
@@ -99,7 +104,8 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-SIGNER-001
     title: 签发人编排
@@ -118,7 +124,8 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-HEADER-LINE-001
     title: 版头分隔线
@@ -130,7 +137,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-TITLE-LAYOUT-001
     title: 标题版式
@@ -147,7 +155,8 @@ rules:
         - deterministic
         - human_review
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-ADDRESSEE-LAYOUT-001
     title: 主送机关版式
@@ -164,7 +173,8 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-BODY-001
     title: 正文版式
@@ -181,7 +191,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-ATTACHMENT-NOTE-001
     title: 附件说明版式
@@ -199,7 +210,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-SEAL-001
     title: 加盖印章公文的署名和日期
@@ -221,7 +233,8 @@ rules:
         - deterministic
         - human_review
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-NO-SEAL-001
     title: 不加盖印章公文的署名和日期
@@ -239,7 +252,8 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-SIGNATURE-SEAL-001
     title: 签发人签名章公文的编排
@@ -260,7 +274,8 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-DATE-001
     title: 成文日期数字格式
@@ -274,7 +289,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-SEAL-SPACE-001
     title: 印章空间不足处理
@@ -289,7 +305,8 @@ rules:
         - deterministic
         - human_review
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-NOTE-001
     title: 附注版式
@@ -303,7 +320,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-ATTACHMENT-001
     title: 附件编排
@@ -323,7 +341,8 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-IMPRINT-LINES-001
     title: 版记分隔线
@@ -339,7 +358,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-CC-001
     title: 抄送机关和移入版记的主送机关
@@ -357,7 +377,8 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-PRINT-OFFICE-DATE-001
     title: 印发机关和印发日期
@@ -374,7 +395,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-PAGE-NUMBER-001
     title: 页码版式
@@ -392,4 +414,5 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"

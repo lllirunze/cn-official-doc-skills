@@ -4,6 +4,17 @@
 
 项目不提供独立聊天应用，也不绑定特定模型或智能体框架。其核心价值在于建立可追溯的规范体系、可执行的质量审核机制，以及可持续维护的中文机关表达知识。
 
+## 安装
+
+本项目可作为 Codex 插件从 GitHub 安装：
+
+```bash
+codex plugin marketplace add lllirunze/cn-official-doc-skills
+codex plugin add cn-official-doc-skills@cn-official-doc-skills
+```
+
+安装后新建一个 Codex 对话，可以直接描述起草或审核任务，也可以显式调用 `$official-document-drafting` 或 `$official-document-review`。完整说明见 [安装与使用](docs/installation.md)。
+
 ## 当前状态
 
 项目处于 `v0.1.0` 设计与基础建设阶段，优先验证以下能力：
@@ -14,7 +25,7 @@
 - 将确定性规则交由程序验证，将语义问题交由 Agent 判断；
 - 对关键规范、判断依据和待核实内容提供可追溯说明。
 
-当前仓库已完成首批四份权威材料的首轮结构化提取；人工逐条复核、规则测试和核心 Skills 仍在建设中，因此尚不应视为可用于正式业务的稳定版本。
+当前仓库已完成首批四份权威材料的结构化提取、Agent逐条来源对照和项目维护者人工签核，并建立两个核心Skills及首批高风险行为样例；可重复执行的规则测试和自动化验证仍在建设中，因此尚不应视为可用于正式业务的稳定版本。
 
 ## 设计原则
 
@@ -36,14 +47,18 @@ cn-official-doc-skills/
 ├── scripts/      # 确定性校验与辅助工具
 ├── tests/        # 程序测试和 Skills 行为样例
 ├── docs/         # 设计、架构、开发及路线图文档
+├── plugin.json   # 可移植插件清单
+├── .agents/      # GitHub 插件市场清单
+├── .codex-plugin/# Codex 插件兼容清单
 └── .github/      # GitHub 自动化流程
 ```
 
-开发仓库可以共享 `standards/`、`corpus/` 和 `lexicon/` 中的资源；正式发布单个 Skill 时，应根据目标运行环境将必要资源打包到 Skill 内部，保证发布包可以独立使用。
+开发仓库和插件包共享 `standards/`、`corpus/` 和 `lexicon/` 中的资源。若将某个 Skill 脱离本插件单独发布，必须同时打包其必要资源并调整引用路径，保证发布包可以独立使用。
 
 ## 文档
 
 - [项目总体设计](docs/design.md)
+- [安装与使用](docs/installation.md)
 - [Standards 规范知识体系设计](docs/standards-design.md)
 - [规范来源与外部材料导入说明](standards/sources/README.md)
 - [贡献指南](CONTRIBUTING.md)
@@ -57,6 +72,8 @@ cn-official-doc-skills/
 2. `official-document-review`：对文种、结构、语言、逻辑、事实和中文合规性进行审核。
 
 首批支持通知、报告、请示三类文稿。大型案例库、完整表达语料库、Word 导出、MCP 服务和 Web 管理界面不属于首个版本范围。
+
+两个 Skill 当前处于开发测试阶段。规则通过项目维护者人工签核并转为 `active` 之前，不得将其输出视为已经完成正式规范审核。
 
 ## 使用边界
 

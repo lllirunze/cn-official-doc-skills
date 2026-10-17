@@ -15,7 +15,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-REFERENCED-STANDARDS-001
     title: 计量单位标点符号和数字引用标准
@@ -30,7 +31,8 @@ rules:
         - deterministic
         - semantic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-LETTER-001
     title: 信函格式
@@ -54,7 +56,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-ORDER-001
     title: 命令令格式
@@ -71,7 +74,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-MINUTES-001
     title: 纪要格式
@@ -91,7 +95,8 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: FORMAT-PATTERNS-001
     title: 公文式样
@@ -113,4 +118,5 @@ rules:
         - human_review
       visual_source_required: true
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"

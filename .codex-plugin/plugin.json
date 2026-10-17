@@ -1,0 +1,36 @@
+{
+  "name": "cn-official-doc-skills",
+  "version": "0.1.0",
+  "description": "面向中文党政机关公文起草与审核的规范驱动型 Agent Skills。",
+  "author": {
+    "name": "lllirunze",
+    "url": "https://github.com/lllirunze"
+  },
+  "homepage": "https://github.com/lllirunze/cn-official-doc-skills",
+  "repository": "https://github.com/lllirunze/cn-official-doc-skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "chinese",
+    "official-documents",
+    "drafting",
+    "review"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "中文机关公文 Skills",
+    "shortDescription": "规范驱动的中文公文起草与审核",
+    "longDescription": "依据已核验的党政机关公文规范，提供通知、报告、请示的起草与审核能力。",
+    "developerName": "lllirunze",
+    "category": "Productivity",
+    "capabilities": [
+      "Write",
+      "Review"
+    ],
+    "websiteURL": "https://github.com/lllirunze/cn-official-doc-skills",
+    "defaultPrompt": [
+      "帮我起草一份规范的通知。",
+      "审核这份报告的文种、行文和格式问题。",
+      "根据已知事实起草一份一文一事的请示。"
+    ]
+  }
+}

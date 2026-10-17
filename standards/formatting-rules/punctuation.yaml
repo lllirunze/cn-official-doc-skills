@@ -48,7 +48,7 @@ rules:
     requirements:
       - 句号形式为“。”，主要用于陈述语气的句末，也可用于较缓和的祈使或感叹语气。
       - 是否使用句号依据语段停顿和语气语调，不取决于句子长短。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-QUESTION-001
     title: 问号的形式和基本用法
@@ -58,7 +58,7 @@ rules:
       - 问号形式为“？”，用于具有疑问语气的句末，也可在句内表示存疑或不详。
       - 选择问句通常仅在最后一项末尾使用问号；需要突出各项独立性时可逐项使用。
       - 多个问句连用或疑问语气异常强烈时可先单用再叠用，最多三个；无异常强烈情感时不宜叠用。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-EXCLAMATION-001
     title: 叹号的形式和基本用法
@@ -68,7 +68,7 @@ rules:
       - 叹号形式为“！”，用于感叹语气，也可用于强烈的祈使或反问语气以及短促、突然的拟声词之后。
       - 声音巨大、不断加大或语气异常强烈时可叠用，最多三个；一般情形不宜叠用。
       - 疑问和感叹两种语气都较强烈时，可在问号后加一个叹号。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-COMMA-001
     title: 逗号的形式和基本用法
@@ -79,7 +79,7 @@ rules:
       - 复句各分句间除应使用分号的情形外一般使用逗号。
       - 可用于较长主语后、句首状语后、较长宾语前、带句内语气词的成分后、较长句子成分内部、前置谓语后以及后置状语或定语前。
       - 可用于复指或插说成分前后，缓和的感叹语、称谓语、呼唤语后，以及“第”“其”“首先”等序次语后。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-ENUMERATION-001
     title: 顿号的形式和基本用法
@@ -89,7 +89,7 @@ rules:
       - 顿号形式为“、”，用于并列词语、需停顿的重复词语以及不带括号的汉字数字或天干地支序次语之间或之后。
       - 相邻数字连用表示概数通常不用顿号；作为缩略形式时宜用顿号。
       - 带引号或书名号的并列成分之间通常不用顿号；成分后另有括注等内容时宜用顿号。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-SEMICOLON-001
     title: 分号的形式和基本用法
@@ -98,7 +98,7 @@ rules:
     requirements:
       - 分号形式为“；”，用于并列复句分句之间，尤其是分句内部已有逗号时。
       - 可用于非并列关系多重复句的第一层分句之间和分项列举各项之间。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-COLON-001
     title: 冒号的形式和基本用法
@@ -107,7 +107,7 @@ rules:
     requirements:
       - 冒号形式为“：”，用于总说性或提示性词语后提示下文、总结上文、需说明词语后作注释说明，以及书信和讲话稿称谓语后。
       - 一个句子内部一般不套用冒号；列举式或条文式表达不得不套用时宜另起段落显示层次。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-QUOTATION-001
     title: 引号的形式和基本用法
@@ -117,7 +117,7 @@ rules:
       - 引号包括双引号和单引号，用于直接引用、需强调内容和别称、简称、反语等特殊含义成分。
       - 引号嵌套时外双内单；多段独立引文每段开头用前引号，仅末段末尾用后引号。
       - 带月日的事件、节日或特定短语通常只标引月日；需突出事件或节日本身时可整体标引。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-PARENTHESES-001
     title: 括号的形式和基本用法
@@ -127,7 +127,7 @@ rules:
       - 圆括号用于注释或补充、订正或补字、序次语、引语出处和汉语拼音注音。
       - 方括号或六角括号可标作者国籍或朝代；方头括号可标报刊电讯开头；六角括号用于公文发文年份。
       - 六角括号或方头括号可标被注释词语；除数学和逻辑公式外应尽量避免括号套用，必须套用时宜配合不同形式。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-DASH-001
     title: 破折号的形式和基本用法
@@ -135,7 +135,7 @@ rules:
     locator: 第4.10.1条至第4.10.3.10条
     requirements:
       - 破折号用于注释或补充、插入语、总结上文或提示下文、话题转换、声音延长、话语中断或间隔、引出对话、列举分承、副标题之前，以及引文或注文后标示作者、出处或注释者。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-ELLIPSIS-001
     title: 省略号的形式和基本用法
@@ -144,7 +144,7 @@ rules:
     requirements:
       - 省略号形式为六连点，用于引文省略、列举或重复省略、语意未尽、说话断续、对话沉默和特定成分虚缺。
       - 省略诗行或段落时可连用两个省略号。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-EMPHASIS-001
     title: 着重号的形式和基本用法
@@ -152,7 +152,7 @@ rules:
     locator: 第4.12.1条至第4.12.3.2条
     requirements:
       - 着重号为标在相应文字下方的小圆点，用于重要或需要指明的文字。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-CONNECTOR-001
     title: 连接号的形式和基本用法
@@ -162,7 +162,7 @@ rules:
       - 连接号包括短横线、一字线和浪纹线。
       - 短横线用于化合物名称、表格插图编号、号码、阿拉伯数字年月日、复合名词、产品名称型号以及拼音或外来语内部的分合。
       - 时间、地域等项目起止及数值范围一般用一字线，有时可用浪纹线。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-MIDDLE-DOT-001
     title: 间隔号的形式和基本用法
@@ -171,7 +171,7 @@ rules:
     requirements:
       - 间隔号用于外国或少数民族人名内部，书名与篇章卷名之间，词牌曲牌诗体名与题名之间，以及标题或栏目名称并列词语之间的分界。
       - 月日事件或节日用汉字数字时只在一月、十一月、十二月后使用间隔号；直接使用阿拉伯数字时月日之间均使用半角间隔号。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-TITLE-MARK-001
     title: 书名号的形式和基本用法
@@ -180,7 +180,7 @@ rules:
     requirements:
       - 书名号包括双书名号和单书名号，用于书、卷、篇、刊物、报纸、文件、影音音乐诗歌雕塑等作品、节目栏目、数据库挂图及中文占主导的软件名称和作品简称。
       - 书名号嵌套时外双内单。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-PROPER-NAME-001
     title: 专名号的形式和基本用法
@@ -189,7 +189,7 @@ rules:
     requirements:
       - 专名号为标在文字下方的直线，用于古籍、古籍引文或某些文史著作中的人名、地名、国名、民族名、朝代名、年号、宗教名、官署名和组织名等。
       - 现代文本中的上述专名及古今文本中的单位、官职、事件、会议和书名等不使用专名号；需要标示时使用相应引号或书名号等。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-SLASH-001
     title: 分隔号的形式和基本用法
@@ -197,7 +197,7 @@ rules:
     locator: 第4.17.1条至第4.17.3.5条
     requirements:
       - 分隔号形式为“/”，用于诗歌接排分隔诗行、标示音节节拍、表示“或”的可选项、表示“和”的配对项以及分隔层级或类别。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-HORIZONTAL-LAYOUT-001
     title: 横排标点的位置和书写形式
@@ -210,7 +210,7 @@ rules:
       - 破折号、省略号不得从中间断开跨行；两个省略号连用时单独占一行。
       - 连接号、间隔号和分隔号按规定占位，连接号和间隔号不得在行首，分隔号不得在行首或行末。
       - 着重号和专名号标在文字下方；行末全角标点可按半角宽度处理；因排版需要可适当压缩标点空间。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
   - id: PUNCT-VERTICAL-LAYOUT-001
     title: 竖排标点的位置和书写形式
@@ -221,7 +221,7 @@ rules:
       - 破折号、省略号、连接号、间隔号和分隔号置于文字之下居中并纵向排列。
       - 引号、括号改用竖排形式并标在项目上下；书名号使用左侧浪线式。
       - 着重号在右、专名号在左；横排关于不得居行首或行末的要求同样适用。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
 normative_appendix_rules:
   - id: PUNCT-ANNEX-A01
@@ -229,19 +229,19 @@ normative_appendix_rules:
     level: mandatory
     locator: 附录A第A.1条
     requirement: 图表的短语式说明文字末尾不用句号，即使前部已有句号，结尾仍不用句号。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-ANNEX-A02
     title: 疑问词不等于疑问语气
     level: mandatory
     locator: 附录A第A.2条
     requirement: 问号以疑问语气为依据；含疑问词但整句不表疑问时句末不用问号。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-ANNEX-A03
     title: 复杂并列项与“以及”前的逗号
     level: mandatory
     locator: 附录A第A.3条
     requirement: 较长、较多或复杂并列成分使用顿号时，末项可用“以及（及）”连接，其前使用逗号。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-ANNEX-A04
     title: 顿号补充规则
     level: mandatory
@@ -249,13 +249,13 @@ normative_appendix_rules:
     requirements:
       - 含顺序关系的并列各项之间使用顿号，不用逗号。
       - 阿拉伯数字年月日简写使用短横线连接号，不用顿号。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-ANNEX-A05
     title: 含句号的分项末尾不用分号
     level: mandatory
     locator: 附录A第A.5条
     requirement: 分项列举中已有一项或多项包含句号时，各项末尾不得再用分号。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-ANNEX-A06
     title: 冒号补充规则
     level: mandatory
@@ -264,19 +264,19 @@ normative_appendix_rules:
       - 只有提示性话语后使用冒号，表面相似但非提示性话语后使用逗号。
       - 冒号提示范围应与提示性话语一致，并在范围末尾用句号点断。
       - 冒号用于有停顿处，无停顿处不用冒号。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-ANNEX-A07
     title: 系列著作选题名使用引号
     level: recommended
     locator: 附录A第A.7条
     requirement: “丛刊”“文库”“系列”“书系”等系列著作选题名宜用引号；其是否置于引号内取决于是否属于选题名组成部分。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-ANNEX-A08
     title: 句内括号和句外括号的位置
     level: mandatory
     locator: 附录A第A.8条
     requirement: 句内括号紧跟被注释词语；结构独立的句外括号位于所注释语段的句末点号之后。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-ANNEX-A09
     title: 省略号补充规则
     level: mandatory
@@ -284,25 +284,25 @@ normative_appendix_rules:
     requirements:
       - 不得用多于两个省略号连续表示省略，并须与目录连珠号区别。
       - 省略号不得与“等”“等等”“什么的”等同时使用；需要读出时使用词语而不用省略号。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-ANNEX-A10
     title: 着重号统一使用小圆点
     level: mandatory
     locator: 附录A第A.10条
     requirement: 不使用直线或波浪线表示着重，着重号统一为文字下方小圆点。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-ANNEX-A11
     title: 数值范围前项单位可省略
     level: conditional
     locator: 附录A第A.11条
     requirement: 浪纹线连接数值范围且不引起歧义时，前一数值的附加符号或计量单位可以省略。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-ANNEX-A12
     title: 间隔号并列标题不再使用连词
     level: mandatory
     locator: 附录A第A.12条
     requirement: 并列短语标题已经使用间隔号时，不再使用“和”类连词。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-ANNEX-A13
     title: 书名号补充规则
     level: mandatory
@@ -314,40 +314,80 @@ normative_appendix_rules:
       - 括注属于书名、篇名组成部分时置于书名号内，否则置于书名号外。
       - 书名、篇名末尾的问号或叹号置于书名号内。
       - 古籍或某些文史著作中可用标在书名下方的浪线式书名号。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-ANNEX-A14
     title: 分隔号补充规则
     level: mandatory
     locator: 附录A第A.14条
     requirement: 分隔号与反斜线相区别，紧贴分隔号前后通常不用点号。
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
 
 informative_guidance:
   - id: PUNCT-GUIDE-B01
     title: 易混标点符号比较
     level: recommended
     locator: 资料性附录B第B.1.1条至第B.1.8条
-    topics: [逗号与顿号, “等”前点号, 逗号与分号, 层次停顿, “说”“道”后点号, 停顿长短, 破折号与括号, 书名号与引号]
+    guidance:
+      - locator: 资料性附录B第B.1.1条
+        requirement: 并列词语一般用停顿较短的顿号；词语较长或其后有语气词时可用停顿较长的逗号。
+      - locator: 资料性附录B第B.1.2条
+        requirement: 并列项用顿号时，末项后的“等”类词语前不用点号；并列项用逗号时，“等”类词语前使用逗号。
+      - locator: 资料性附录B第B.1.3条
+        requirement: 复句简单紧凑且分句内无逗号时多用逗号；逗号难以显示多重复句层次而句号会割裂关系时用分号。
+      - locator: 资料性附录B第B.1.4条
+        requirement: 层次停顿通常由低到高为顿号、逗号、分号；分句内部已有逗号时分句间用分号；分号分隔的并列分句不能由逗号统领或总结。
+      - locator: 资料性附录B第B.1.5条
+        requirement: 引文前的“说”“道”后用冒号；引文后的“说”“道”处于句末时用句号，后有成分时用逗号；插在话语中间时用逗号。
+      - locator: 资料性附录B第B.1.6条
+        requirement: 通常点号停顿由长到短为句号、问号、叹号，冒号，分号，逗号，顿号。
+      - locator: 资料性附录B第B.1.7条
+        requirement: 破折号用于较重要且可与正文连读的解释说明；括号用于一般性、可不与正文连读的注释。
+      - locator: 资料性附录B第B.1.8条
+        requirement: “题为”或“以……为题”所指为作品标题时用书名号，所指为写作、科研、辩论或谈话主题时用引号。
     normative: false
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-GUIDE-B02
     title: 两个标点符号连用说明
     level: recommended
     locator: 资料性附录B第B.2.1条至第B.2.4条
-    topics: [引号内外, 括号内外, 破折号前后, 省略号前后]
+    guidance:
+      - locator: 资料性附录B第B.2.1条
+        requirement: 完整独立引文或带问号叹号的引文保留引号内句末点号；其他引文通常不在引号内用句末点号，并依引文所处停顿位置决定引号外是否用点号。
+      - locator: 资料性附录B第B.2.2条
+        requirement: 括号内可按需用问号、叹号、省略号；句内括号末通常不用其他点号，句外括号是否用句号依内部结构决定；括号外点号依句内外位置决定。
+      - locator: 资料性附录B第B.2.3条
+        requirement: 破折号前通常不用点号但可按结构使用，破折号后通常不紧跟点号；表示语音停顿或延长时可按语气紧跟问号或叹号。
+      - locator: 资料性附录B第B.2.4条
+        requirement: 省略号前后通常不用点号；强烈语气、结构辨识、前后内容不连续或特定格式虚缺等情形按条文规定保留或补用点号。
     normative: false
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-GUIDE-B03
     title: 序次语后的标点说明
     level: recommended
     locator: 资料性附录B第B.3.1条至第B.3.8条
-    requirement: 根据序次语形式选用逗号、顿号、下脚点、空格或不用点号，并保持层级顺序一致。
+    guidance:
+      - locator: 资料性附录B第B.3.1条
+        requirement: “第”“其”字头或“首先”“其次”“最后”等序次语后用逗号。
+      - locator: 资料性附录B第B.3.2条
+        requirement: 不带括号的汉字数字或天干地支序次语后用顿号。
+      - locator: 资料性附录B第B.3.3条
+        requirement: 不带括号的阿拉伯数字、拉丁字母或罗马数字序次语后用下脚点。
+      - locator: 资料性附录B第B.3.4条
+        requirement: 加括号的序次语后不用任何点号。
+      - locator: 资料性附录B第B.3.5条
+        requirement: 阿拉伯数字与下脚点结合表示章节关系时，序次语末尾不用点号。
+      - locator: 资料性附录B第B.3.6条
+        requirement: 章节、条款序次语后宜用空格表示停顿。
+      - locator: 资料性附录B第B.3.7条
+        requirement: 序次简单、叙述性较强的序次语后不用标点。
+      - locator: 资料性附录B第B.3.8条
+        requirement: 同类序次语一般按汉字数字加顿号、带括号汉字数字、阿拉伯数字加下脚点、带括号阿拉伯数字等层次向下使用，不宜在低层后返回高层。
     normative: false
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}
   - id: PUNCT-GUIDE-B04
     title: 文章标题末尾标点说明
     level: recommended
     locator: 资料性附录B第B.4条
     requirement: 文章标题末尾通常不用标点，必要时可用问号、叹号或省略号。
     normative: false
-    review: {status: extracted}
+    review: {status: human_approved, source_checked_at: "2026-10-17"}

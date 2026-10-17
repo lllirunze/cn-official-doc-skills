@@ -21,7 +21,7 @@ sources:
     text_extraction_check: all_pages_readable
     validity_status: pending_verification
     redistribution: unknown
-    notes: 中国政府网页面导出的 PDF；第1条至第42条及全部分项已完成首轮结构化提取，待人工复核；许可确认前不提交原文。
+    notes: 中国政府网页面导出的 PDF；第1条至第42条及全部分项已完成结构化提取和Agent逐条来源对照，待项目维护者人工签核；许可确认前不提交原文。
 
   - id: SOURCE-002
     title: 党政机关公文格式
@@ -43,7 +43,7 @@ sources:
     validity_status: current_on_official_index
     validity_checked_at: "2026-10-17"
     redistribution: unknown
-    notes: 全部正文规则已完成首轮提取；图1至图12待人工视觉复核。许可确认前不提交原文。
+    notes: 第1章至第11章已完成结构化提取和Agent逐条来源对照，图1至图12已完成渲染视觉复核；待项目维护者人工签核。许可确认前不提交原文。
 
   - id: SOURCE-003
     title: 标点符号用法
@@ -65,7 +65,7 @@ sources:
     validity_status: current_on_official_index
     validity_checked_at: "2026-10-17"
     redistribution: unknown
-    notes: 第1章至第5章和规范性附录A已完成首轮提取；资料性附录B作为非强制指导登记；待人工复核。许可确认前不提交原文。
+    notes: 第1章至第5章、规范性附录A和资料性附录B已完成结构化提取和Agent逐条来源对照；附录B按非强制指导处理；待项目维护者人工签核。许可确认前不提交原文。
 
   - id: SOURCE-004
     title: 出版物上数字用法
@@ -87,4 +87,4 @@ sources:
     validity_status: current_on_official_index
     validity_checked_at: "2026-10-17"
     redistribution: unknown
-    notes: 第1章至第5章已完成首轮结构化提取，待人工复核；许可确认前不提交原文。
+    notes: 第1章至第5章已完成结构化提取和Agent逐条来源对照，待项目维护者人工签核；许可确认前不提交原文。

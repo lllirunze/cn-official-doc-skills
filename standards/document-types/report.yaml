@@ -28,8 +28,8 @@ document_type:
         - source_id: SOURCE-001
           locator: 第八条第十项
       review:
-        status: extracted
-        reviewed_at: null
+        status: human_approved
+        reviewed_at: "2026-10-17"
 
     - id: ROUTING-REPORT-001
       title: 报告不得夹带请示事项
@@ -45,5 +45,5 @@ document_type:
         - source_id: SOURCE-001
           locator: 第十五条第四项
       review:
-        status: extracted
-        reviewed_at: null
+        status: human_approved
+        reviewed_at: "2026-10-17"

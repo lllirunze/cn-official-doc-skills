@@ -1,0 +1,56 @@
+schema_version: 1
+source_id: SOURCE-003
+reviewed_at: "2026-10-17"
+review_kind: agent_source_comparison
+review_scope: 第1章至第5章、规范性附录A、资料性附录B
+source_file: ../originals/SOURCE-003-GBT-15834-2011-标点符号用法.pdf
+rule_file: ../../formatting-rules/punctuation.yaml
+result: passed_with_corrections
+human_approval: approved
+human_approved_at: "2026-10-17"
+human_approved_by: project_maintainer_user
+usable: false
+
+checks:
+  source_identity:
+    status: passed
+    evidence: 标准号、名称、发布实施日期、发布主体和25页页序与来源索引一致。
+  normative_completeness:
+    status: passed
+    evidence: 范围、术语、分类、第4章17类标点、第5章横竖排规则和规范性附录A第A.1至A.14条全部覆盖。
+  informative_completeness:
+    status: passed_with_corrections
+    evidence: 资料性附录B第B.1.1至B.4条已由主题索引扩展为逐项指导，并明确标注非规范性。
+  locator_accuracy:
+    status: passed
+    evidence: 正文、规范性附录和资料性附录规则均具有对应编号定位。
+  normative_separation:
+    status: passed
+    evidence: 附录A保存在规范性规则区，附录B保存在informative_guidance且normative为false。
+
+section_results:
+  - sections: 第1章至第3章
+    status: source_checked
+    notes: 适用范围、五个术语以及点号和标号分类均已覆盖。
+  - sections: 第4.1条至第4.17条
+    status: source_checked
+    notes: 17类标点的定义、形式和全部基本用法均已覆盖。
+  - sections: 第5.1.1条至第5.2.6条
+    status: source_checked
+    notes: 横排和竖排标点位置、占位、禁则及压缩规则全部覆盖。
+  - sections: 规范性附录A第A.1条至第A.14条
+    status: source_checked
+    notes: 全部补充规则已作为规范性规则记录。
+  - sections: 资料性附录B第B.1.1条至第B.4条
+    status: source_checked
+    notes: 易混符号、符号连用、序次语和标题标点说明已逐项登记为非强制指导。
+
+corrections:
+  - area: 资料性附录B
+    issue: 原结构仅登记B.1和B.2主题、概括B.3和B.4，不能证明每项说明均已入库。
+    resolution: 展开B.1.1至B.1.8、B.2.1至B.2.4、B.3.1至B.3.8和B.4的具体指导。
+
+remaining:
+  - 由项目维护者对照原文完成人工签核。
+  - 为高频标点规则建立正例、反例和边界测试。
+  - 人工签核和测试完成前不得将本来源标记为可用。

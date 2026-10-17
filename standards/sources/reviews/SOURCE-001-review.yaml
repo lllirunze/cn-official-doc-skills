@@ -1,0 +1,77 @@
+schema_version: 1
+source_id: SOURCE-001
+reviewed_at: "2026-10-17"
+review_kind: agent_source_comparison
+review_scope: 第一条至第四十二条及全部分项
+source_file: ../originals/SOURCE-001-党政机关公文处理工作条例.pdf
+rule_file: ../../writing-rules/document-handling-regulation.yaml
+result: passed_with_corrections
+human_approval: approved
+human_approved_at: "2026-10-17"
+human_approved_by: project_maintainer_user
+usable: false
+
+checks:
+  source_identity:
+    status: passed
+    evidence: 标题、发布主体、正文条款序列和施行日期与来源索引相符。
+  sequence_completeness:
+    status: passed
+    evidence: 第一条至第四十二条连续；第八、九、十五、十六、十九、二十、二十四、二十五条全部分项已覆盖。
+  locator_accuracy:
+    status: passed
+    evidence: 42条覆盖记录均可定位到具体条；含分项条款均标明起止项。
+  semantic_fidelity:
+    status: passed_with_corrections
+    evidence: 修正第三条公文作用摘要和第十五条第五项交办主体限定后，未发现超出或改变原文含义的记录。
+  classification:
+    status: passed
+    evidence: 条件性参照执行规则与普遍要求已经区分；全部记录仍保持未启用状态。
+
+article_results:
+  - articles: 第一条至第七条
+    status: source_checked
+    notes: 总则、定义、原则、组织职责均与原文一致；第三条摘要已按原文补全作用表述。
+  - articles: 第八条第一项至第十五项
+    status: source_checked
+    notes: 十五种主要公文种类及法定适用范围全部覆盖。
+  - articles: 第九条第一项至第十八项
+    status: source_checked
+    notes: 十八项公文组成要素、条件和定义全部覆盖。
+  - articles: 第十条至第十四条
+    status: source_checked
+    notes: 版式、字符、用纸和一般行文规则均与原文一致。
+  - articles: 第十五条第一项至第六项
+    status: source_checked
+    notes: 六项上行文规则全部覆盖；第五项已补全“上级机关负责人”限定。
+  - articles: 第十六条第一项至第五项
+    status: source_checked
+    notes: 五项下行文规则及擅自行文处置要求全部覆盖。
+  - articles: 第十七条至第二十三条
+    status: source_checked
+    notes: 联合行文、公文拟制、起草审核签发和办理范围全部覆盖。
+  - articles: 第二十四条第一项至第七项
+    status: source_checked
+    notes: 收文办理七个程序及各程序要求全部覆盖。
+  - articles: 第二十五条第一项至第四项
+    status: source_checked
+    notes: 发文办理四个程序及各程序要求全部覆盖。
+  - articles: 第二十六条至第三十七条
+    status: source_checked
+    notes: 涉密传递、归档和公文管理规则全部覆盖。
+  - articles: 第三十八条至第四十二条
+    status: source_checked
+    notes: 电子公文、特殊领域适用、参照执行、解释和施行条款全部覆盖。
+
+corrections:
+  - rule_id: REG-ARTICLE-003
+    issue: 原摘要将“传达贯彻党和国家的方针政策”过度压缩为“贯彻政策”。
+    resolution: 补全传达贯彻、主体和“重要工具”表述。
+  - rule_id: REG-ARTICLE-015
+    issue: 第五项摘要中的直接交办主体缺少“上级机关”限定。
+    resolution: 修正为“除上级机关负责人直接交办事项外”。
+
+remaining:
+  - 由项目维护者对照原文完成人工签核。
+  - 为准备启用的规则建立正例、反例和行为测试。
+  - 人工签核和测试完成前不得将本来源标记为可用。

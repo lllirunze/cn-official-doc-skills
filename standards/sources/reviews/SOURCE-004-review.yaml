@@ -1,0 +1,62 @@
+schema_version: 1
+source_id: SOURCE-004
+reviewed_at: "2026-10-17"
+review_kind: agent_source_comparison
+review_scope: 第1章至第5章
+source_file: ../originals/SOURCE-004-GBT-15835-2011-出版物上数字用法.pdf
+rule_file: ../../formatting-rules/numerals.yaml
+result: passed_with_corrections
+human_approval: approved
+human_approved_at: "2026-10-17"
+human_approved_by: project_maintainer_user
+usable: false
+
+checks:
+  source_identity:
+    status: passed
+    evidence: 标准号、名称、发布实施日期、发布主体和页数与来源索引一致。
+  sequence_completeness:
+    status: passed
+    evidence: 范围、规范性引用文件、三个术语及第4章、第5章全部编号条款均已覆盖。
+  locator_accuracy:
+    status: passed
+    evidence: 每条数字规则均定位到第4.1.1条至第5.3条中的具体条款。
+  semantic_fidelity:
+    status: passed
+    evidence: 阿拉伯数字、汉字数字、可选形式、书写格式和混用限制均未改变原文含义。
+  normative_strength:
+    status: passed
+    evidence: “应”“不应”“必须”“不能”“可以”“一般”等强度已在mandatory、conditional或recommended等级和要求文字中体现。
+
+section_results:
+  - sections: 第1章至第3章
+    status: source_checked
+    notes: 补全主要适用对象、排除对象和可参照领域；引用文件和三个术语与原文一致。
+  - sections: 第4.1.1条至第4.1.3条
+    status: source_checked
+    notes: 计量、编号和定型词语使用阿拉伯数字的规则全部覆盖。
+  - sections: 第4.2.1条至第4.2.3条
+    status: source_checked
+    notes: 非公历纪年、概数和定型词语使用汉字数字的规则全部覆盖。
+  - sections: 第4.3条
+    status: source_checked
+    notes: 形式选择、同类同形、避免歧义及法律财务文件双写规则全部覆盖。
+  - sections: 第5.1.1条至第5.1.7.3条
+    status: source_checked
+    notes: 分节、小数、范围、日期时间、月日专名、字体换行及竖排规则全部覆盖。
+  - sections: 第5.2.1条至第5.2.5条
+    status: source_checked
+    notes: 汉字概数、年份、月日专名、大写数字及“零”“○”规则全部覆盖。
+  - sections: 第5.3条
+    status: source_checked
+    notes: 大数值以“万”“亿”混写的例外和一般数值禁止混写规则均已覆盖。
+
+corrections:
+  - area: scope
+    issue: 原结构仅记录政府和企事业单位公文可参照执行，未记录主要适用对象、排除项和其他可参照领域。
+    resolution: 补充各类出版物、文艺类和重排古籍排除项，以及教育、媒体和公共服务领域。
+
+remaining:
+  - 由项目维护者对照原文完成人工签核。
+  - 为确定性规则建立正例、反例和边界测试。
+  - 人工签核和测试完成前不得将本来源标记为可用。

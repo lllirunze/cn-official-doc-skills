@@ -3,7 +3,10 @@ source_id: SOURCE-004
 scope:
   normative_sections:
     - 第1章至第5章
-  applicability: 政府和企事业单位公文可以参照执行
+  applicability:
+    primary: 各类出版物
+    exclusions: [文艺类出版物, 重排古籍]
+    may_reference: [政府和企事业单位公文, 教育领域, 媒体领域, 公共服务领域]
 normative_references:
   locator: 第2章
   documents: [GB/T 7408—2005]
@@ -30,7 +33,8 @@ rules:
         - deterministic
         - semantic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-ARABIC-ID-001
     title: 编号使用阿拉伯数字
@@ -43,7 +47,8 @@ rules:
         - deterministic
         - semantic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-ARABIC-FIXED-001
     title: 定型词语中的阿拉伯数字
@@ -56,7 +61,8 @@ rules:
         - semantic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-CHINESE-CALENDAR-001
     title: 非公历纪年使用汉字数字
@@ -69,7 +75,8 @@ rules:
         - deterministic
         - semantic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-CHINESE-APPROX-001
     title: 概数使用汉字数字
@@ -83,7 +90,8 @@ rules:
         - deterministic
         - semantic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-CHINESE-FIXED-001
     title: 定型词语中的汉字数字
@@ -96,7 +104,8 @@ rules:
         - semantic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-CHOICE-001
     title: 两种数字形式均可的场景
@@ -114,7 +123,8 @@ rules:
         - semantic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-GROUPING-001
     title: 多位数分节
@@ -132,7 +142,8 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-DECIMAL-001
     title: 纯小数写法
@@ -145,7 +156,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-RANGE-001
     title: 数值范围写法
@@ -160,7 +172,8 @@ rules:
         - deterministic
         - semantic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-DATE-001
     title: 年月日写法
@@ -177,7 +190,8 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-TIME-001
     title: 时分秒写法
@@ -191,7 +205,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-NAMED-DATE-ARABIC-001
     title: 阿拉伯数字月日专名
@@ -205,7 +220,8 @@ rules:
         - deterministic
         - semantic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-TYPEFACE-001
     title: 阿拉伯数字字体
@@ -217,7 +233,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-LINEBREAK-001
     title: 数值不得断行
@@ -229,7 +246,8 @@ rules:
       mode:
         - deterministic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-VERTICAL-001
     title: 竖排文本数字方向
@@ -245,7 +263,8 @@ rules:
         - deterministic
         - human_review
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-APPROX-PUNCT-001
     title: 汉字概数不用顿号
@@ -258,7 +277,8 @@ rules:
         - deterministic
         - semantic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-YEAR-CHINESE-001
     title: 汉字年份避免歧义性简写
@@ -270,7 +290,8 @@ rules:
       mode:
         - semantic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-NAMED-DATE-CHINESE-001
     title: 汉字数字月日专名
@@ -284,7 +305,8 @@ rules:
         - deterministic
         - semantic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-UPPERCASE-001
     title: 大写汉字数字
@@ -298,7 +320,8 @@ rules:
         - deterministic
         - context_required
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-ZERO-001
     title: 零和○的区分
@@ -312,7 +335,8 @@ rules:
         - deterministic
         - semantic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"
 
   - id: NUMBER-MIXED-001
     title: 阿拉伯数字与汉字数字混用
@@ -326,4 +350,5 @@ rules:
         - deterministic
         - semantic
     review:
-      status: extracted
+      status: human_approved
+      source_checked_at: "2026-10-17"

@@ -1,0 +1,21 @@
+{
+  "name": "cn-official-doc-skills",
+  "interface": {
+    "displayName": "中文机关公文 Skills"
+  },
+  "plugins": [
+    {
+      "name": "cn-official-doc-skills",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lllirunze/cn-official-doc-skills.git",
+        "ref": "master"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

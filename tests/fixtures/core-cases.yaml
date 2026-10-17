@@ -1,0 +1,501 @@
+schema_version: 1
+suite_id: v0.1-core-behavior
+status: human_approved
+source_checked_at: "2026-10-17"
+human_approval: approved
+human_approved_at: "2026-10-17"
+
+cases:
+  - id: CASE-DOC-TYPE-001
+    capability: review
+    title: 报告适用范围正例
+    rule_ids: [DOC-TYPE-REPORT-001]
+    context:
+      sender: 某市某局
+      addressee: 某省某厅
+      relationship: 具有上下级业务领导关系
+    input: 汇报专项整治工作的完成情况、存在问题和下一步工作安排，不请求批准事项。
+    expected:
+      outcome: pass
+      findings: [报告文种与向上级汇报工作目的相符]
+    forbidden: [无依据改判为请示, 编造工作数据]
+    evaluation: semantic
+
+  - id: CASE-DOC-TYPE-002
+    capability: review
+    title: 报告夹带请示
+    rule_ids: [ROUTING-REPORT-001, REG-ARTICLE-015]
+    input: 文稿标题为工作情况报告，正文末尾要求上级批准追加专项经费并批复项目延期。
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [报告夹带需要批准的请示事项]
+      remediation: 将请求事项另行按一文一事原则形成请示，并核实是否属于同一事项。
+    forbidden: [仅做语言润色而忽略文种问题]
+    evaluation: semantic
+
+  - id: CASE-DOC-TYPE-003
+    capability: review
+    title: 请示一文多事
+    rule_ids: [ROUTING-REQUEST-001, REG-ARTICLE-015]
+    input: 同一请示同时请求批准办公楼维修资金、人员编制调整和年度培训计划。
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [存在多个可分别答复和办理的请求事项]
+    forbidden: [把三个事项概括成一个标题后判定通过]
+    evaluation: semantic
+
+  - id: CASE-DOC-TYPE-004
+    capability: drafting
+    title: 通知信息完整时成稿
+    rule_ids: [DOC-TYPE-NOTICE-001, WRITING-GENERAL-003]
+    context:
+      purpose: 向所属单位传达已确定的培训时间、地点和报名要求
+      authority_confirmed: true
+      facts_confirmed: true
+    expected:
+      outcome: draft
+      required_elements: [明确事项, 执行对象, 时间地点, 报名要求]
+    forbidden: [新增未提供的联系人或联系电话, 虚构政策依据]
+    evaluation: semantic
+
+  - id: CASE-ROUTING-001
+    capability: review
+    title: 越级行文缺少抄送
+    rule_ids: [ROUTING-GENERAL-003, REG-ARTICLE-014]
+    context:
+      sender: 县级机关
+      addressee: 省级直接上级之外的更高机关
+      skipped_organization: 市级直接上级机关
+      special_reason_confirmed: true
+      copied_to_skipped_organization: false
+    expected:
+      outcome: fail
+      severity: important
+      findings: [特殊情况越级行文但未同时抄送被越过机关]
+    evaluation: context_required
+
+  - id: CASE-ROUTING-002
+    capability: review
+    title: 隶属关系未知时不得武断判断
+    rule_ids: [ROUTING-GENERAL-002]
+    context:
+      sender: 某中心
+      addressee: 某委员会
+      relationship: unknown
+    input: 关于某事项的请示
+    expected:
+      outcome: needs_context
+      findings: [需补充组织隶属关系和事项职权范围]
+    forbidden: [仅根据机关名称断定为上下级关系]
+    evaluation: context_required
+
+  - id: CASE-ROUTING-003
+    capability: review
+    title: 上行文抄送下级机关
+    rule_ids: [ROUTING-UPWARD-001]
+    context:
+      direction: upward
+      copied_organizations: [所属下级单位]
+    expected:
+      outcome: fail
+      severity: important
+      findings: [上行文不应抄送下级机关]
+    evaluation: deterministic_with_context
+
+  - id: CASE-FACT-001
+    capability: drafting
+    title: 缺少政策文号时保留待核实
+    rule_ids: [WRITING-GENERAL-001]
+    input: 根据近期上级关于基层治理的文件写一份通知，但用户未提供文件名称和文号。
+    expected:
+      outcome: draft_with_placeholders
+      required_elements: [待核实的政策文件全称及文号]
+    forbidden: [编造政策名称, 编造发文字号, 将未知依据写成已确认事实]
+    evaluation: semantic
+
+  - id: CASE-FACT-002
+    capability: drafting
+    title: 不编造工作成效数字
+    rule_ids: [WRITING-GENERAL-002]
+    input: 用户要求写工作报告，只说明“取得一定成效”，未提供数量、比例或排名。
+    expected:
+      outcome: draft_with_caveat
+      findings: [不得自行添加数量比例排名]
+    forbidden: [生成具体增长率, 生成参与人数, 生成全省排名]
+    evaluation: semantic
+
+  - id: CASE-FORMAT-001
+    capability: review
+    title: 上行文缺少签发人
+    rule_ids: [REG-ARTICLE-009, FORMAT-SIGNER-001]
+    context:
+      direction: upward
+      signer_present: false
+    expected:
+      outcome: fail
+      severity: important
+      findings: [上行文应标注签发人姓名]
+    evaluation: deterministic_with_context
+
+  - id: CASE-FORMAT-002
+    capability: review
+    title: 发文字号年份括号错误
+    rule_ids: [FORMAT-DOC-NUMBER-001, PUNCT-PARENTHESES-001]
+    input: 某发〔2026〕第03号
+    expected:
+      outcome: fail
+      severity: general
+      findings: [年份和顺序号编排不符合规则]
+    evaluation: deterministic
+
+  - id: CASE-FORMAT-003
+    capability: review
+    title: A4纸张和版心正例
+    rule_ids: [FORMAT-PAPER-SIZE-001, FORMAT-PAGE-MARGIN-001]
+    context:
+      paper_mm: [210, 297]
+      top_margin_mm: 37
+      binding_margin_mm: 28
+      text_area_mm: [156, 225]
+    expected:
+      outcome: pass
+    evaluation: deterministic
+
+  - id: CASE-PUNCT-001
+    capability: review
+    title: 非疑问句误用问号
+    rule_ids: [PUNCT-QUESTION-001, PUNCT-ANNEX-A02]
+    input: 我们需要认真研究如何进一步提高工作效率？
+    expected:
+      outcome: fail
+      severity: general
+      findings: [句子不表示疑问语气，句末不应使用问号]
+    evaluation: semantic
+
+  - id: CASE-PUNCT-002
+    capability: review
+    title: 省略号与“等”重复
+    rule_ids: [PUNCT-ANNEX-A09]
+    input: 需提交申请表、身份证明、授权材料……等。
+    expected:
+      outcome: fail
+      severity: general
+      findings: [省略号不得与“等”同时使用]
+    evaluation: deterministic
+
+  - id: CASE-PUNCT-003
+    capability: review
+    title: 会议名称误用书名号
+    rule_ids: [PUNCT-ANNEX-A13]
+    input: 我局将召开《年度安全生产工作会议》。
+    expected:
+      outcome: fail
+      severity: general
+      findings: [会议名称不能视为作品，不应使用书名号]
+    evaluation: semantic
+
+  - id: CASE-NUMBER-001
+    capability: review
+    title: 公文编号使用阿拉伯数字
+    rule_ids: [NUMBER-ARABIC-ID-001]
+    input: 国办发〔一九八七〕九号
+    expected:
+      outcome: fail
+      severity: general
+      findings: [用于编号的数字应采用阿拉伯数字]
+    evaluation: deterministic
+
+  - id: CASE-NUMBER-002
+    capability: review
+    title: 概数中误加顿号
+    rule_ids: [NUMBER-APPROX-PUNCT-001]
+    input: 预计需要三、五天完成。
+    expected:
+      outcome: fail
+      severity: general
+      findings: [相邻数字表示概数时不用顿号]
+    evaluation: semantic
+
+  - id: CASE-NUMBER-003
+    capability: review
+    title: 四位年份不得简写
+    rule_ids: [NUMBER-DATE-001]
+    input: 本办法自26年10月1日起施行。
+    expected:
+      outcome: fail
+      severity: general
+      findings: [四位年份不得简写为两位]
+    evaluation: deterministic
+
+  - id: CASE-GATE-001
+    capability: [drafting, review]
+    title: 未人工签核规则的开发模式声明
+    rule_ids: []
+    context:
+      source_review_status: source_checked
+      source_usable: false
+    expected:
+      outcome: development_only
+      required_elements: [规则尚待项目维护者人工签核，不得替代正式审核]
+    forbidden: [宣称规则已经正式启用, 宣称文稿已通过机关内部审批]
+    evaluation: deterministic
+
+  - id: CASE-DOC-TYPE-005
+    capability: review
+    title: 请示适用范围正例
+    rule_ids: [DOC-TYPE-REQUEST-001]
+    context:
+      sender: 下级机关
+      addressee: 具有审批权限的直接上级机关
+      request_count: 1
+    input: 请求批准一个建设项目延期事项，并给出原因和倾向性意见。
+    expected:
+      outcome: pass
+      findings: [行文目的与请示文种相符, 核心请求事项单一]
+    evaluation: semantic_with_context
+
+  - id: CASE-DOC-TYPE-006
+    capability: review
+    title: 转报请示缺少倾向性意见
+    rule_ids: [ROUTING-REQUEST-002]
+    context:
+      forwarded_lower_request: true
+      forwarding_in_own_name: true
+      preference_included: false
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [不得原文转报下级请示, 应提出本机关倾向性意见]
+    evaluation: context_required
+
+  - id: CASE-ROUTING-004
+    capability: review
+    title: 行文缺乏必要性
+    rule_ids: [ROUTING-GENERAL-001]
+    input: 拟正式发文重复转述已送达全部对象且没有新增执行要求的文件，无法说明再次行文的实际作用。
+    expected:
+      outcome: needs_human_review
+      severity: important
+      findings: [需要核实行文必要性、实效性和具体用途]
+    evaluation: semantic_and_human_review
+
+  - id: CASE-ROUTING-005
+    capability: review
+    title: 部门重大事项未经本级党委政府同意
+    rule_ids: [ROUTING-UPWARD-002]
+    context:
+      sender_type: 党委政府部门
+      matter_is_major: true
+      sent_to: 上级主管部门
+      local_authorization: false
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [重大事项请示报告缺少本级党委政府同意或授权]
+    evaluation: context_required
+
+  - id: CASE-ROUTING-006
+    capability: review
+    title: 直接向上级机关负责人报送
+    rule_ids: [ROUTING-UPWARD-003]
+    context:
+      directly_assigned_by_superior_leader: false
+      addressee: 上级机关某负责人个人
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [不属于直接交办事项，不得以本机关名义直接向上级机关负责人报送]
+    evaluation: context_required
+
+  - id: CASE-ROUTING-007
+    capability: review
+    title: 双重领导机关的抄送判断
+    rule_ids: [ROUTING-UPWARD-004, ROUTING-DOWNWARD-001]
+    context:
+      dual_leadership: true
+      direction: upward
+      copied_to_other_superior: unknown
+    expected:
+      outcome: needs_context
+      findings: [需要结合事项和工作需要判断是否抄送另一个上级机关]
+    forbidden: [把“必要时”错误解释为一律必须抄送]
+    evaluation: context_required
+
+  - id: CASE-ROUTING-008
+    capability: review
+    title: 部门越权向下级党委政府提出指令
+    rule_ids: [ROUTING-DOWNWARD-002, ROUTING-DOWNWARD-003]
+    context:
+      sender_type: 政府职能部门
+      addressee_type: 下级政府
+      office_authorization: false
+      government_approval_noted: false
+    input: 要求下级政府立即执行部门自行决定的措施。
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [部门不得擅自向下级党委政府提出指令性要求]
+    evaluation: context_required
+
+  - id: CASE-ROUTING-009
+    capability: review
+    title: 多部门事项未协商一致
+    rule_ids: [ROUTING-DOWNWARD-004, WRITING-GENERAL-006]
+    context:
+      departments_involved: [部门甲, 部门乙]
+      consensus_reached: false
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [涉及多个部门职权但尚未协商一致，不得向下行文]
+    evaluation: context_required
+
+  - id: CASE-ROUTING-010
+    capability: review
+    title: 不符合联合行文条件
+    rule_ids: [ROUTING-JOINT-001, ROUTING-AUTHORITY-001]
+    context:
+      senders: [某部门内设业务处, 同级另一机关]
+      first_sender_is_internal_office: true
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [部门内设机构除办公厅室外不得对外正式行文]
+    evaluation: context_required
+
+  - id: CASE-WRITING-001
+    capability: review
+    title: 起草质量综合审核
+    rule_ids: [WRITING-GENERAL-003, WRITING-GENERAL-004, WRITING-GENERAL-005, REVIEW-GENERAL-001]
+    input: 文稿主题分散、重复表述明显、文种与行文目的不一致，且无法说明是否经过调研论证。
+    expected:
+      outcome: fail
+      severity: important
+      findings: [主题和结构需要调整, 文种需要重新判断, 调研论证情况需要人工确认]
+    forbidden: [仅修改词语而忽略文种和调研背景]
+    evaluation: semantic_and_context_required
+
+  - id: CASE-FORMAT-004
+    capability: review
+    title: 公文组成要素按条件适用
+    rule_ids: [FORMAT-ELEMENTS-001, FORMAT-TITLE-001, FORMAT-ADDRESSEE-001]
+    context:
+      has_addressee: true
+      addressee_name_is_official: false
+    input: 标题缺少文种，主送机关使用非规范口语简称。
+    expected:
+      outcome: fail
+      severity: important
+      findings: [标题组成不完整, 主送机关应使用全称规范简称或同类型统称]
+    forbidden: [要求每份公文无条件具备全部一般组成要素]
+    evaluation: semantic_with_context
+
+  - id: CASE-FORMAT-005
+    capability: review
+    title: 标题主送正文编排
+    rule_ids: [FORMAT-TITLE-LAYOUT-001, FORMAT-ADDRESSEE-LAYOUT-001, FORMAT-BODY-001]
+    context:
+      title_lines: 1
+      title_position: 版心左侧
+      addressee_position: 标题同一行
+      body_first_line_indent_chars: 0
+    expected:
+      outcome: fail
+      severity: general
+      findings: [标题、主送机关和正文首行编排不符合规则]
+    evaluation: deterministic
+
+  - id: CASE-FORMAT-006
+    capability: review
+    title: 附件说明与附件正文一致
+    rule_ids: [FORMAT-ATTACHMENT-NOTE-001, FORMAT-ATTACHMENT-001]
+    context:
+      attachment_note: "附件：1. 工作方案"
+      actual_attachment_heading: "附件2 工作计划"
+    expected:
+      outcome: fail
+      severity: important
+      findings: [附件顺序号和名称与附件说明不一致]
+    evaluation: deterministic_and_semantic
+
+  - id: CASE-FORMAT-007
+    capability: review
+    title: 成文日期和页码
+    rule_ids: [FORMAT-DATE-001, FORMAT-PAGE-NUMBER-001]
+    context:
+      date_text: "二〇二六年十月十七日"
+      blank_page_has_page_number: true
+    expected:
+      outcome: fail
+      severity: general
+      findings: [成文日期应使用阿拉伯数字, 公文版记页前有空白页时空白页和版记页均不编排页码]
+    evaluation: deterministic_with_layout_context
+
+  - id: CASE-PUNCT-004
+    capability: review
+    title: 常用句内点号层次
+    rule_ids: [PUNCT-PERIOD-001, PUNCT-COMMA-001, PUNCT-ENUMERATION-001, PUNCT-SEMICOLON-001, PUNCT-COLON-001]
+    input: 主要任务如下，一、完善制度，二、加强培训，三、开展检查。
+    expected:
+      outcome: fail
+      severity: general
+      findings: [提示下文处和序次语后点号需按结构调整, 分项层次和句末点号需统一]
+    evaluation: semantic
+
+  - id: CASE-PUNCT-005
+    capability: review
+    title: 引号括号和书名号边界
+    rule_ids: [PUNCT-QUOTATION-001, PUNCT-PARENTHESES-001, PUNCT-TITLE-MARK-001]
+    input: 本次活动主题为《安全生产》，学习文件“关于开展安全检查的通知”，并在正文句末注释（具体名单另附）。
+    expected:
+      outcome: fail
+      severity: general
+      findings: [活动主题不使用书名号, 文件名应使用书名号, 句外括号位置需结合被注释语段调整]
+    evaluation: semantic
+
+  - id: CASE-PUNCT-006
+    capability: review
+    title: 序次语层级
+    rule_ids: [PUNCT-GUIDE-B03]
+    input: "（一）总体要求\n一、主要任务\n（1）具体措施"
+    expected:
+      outcome: fail
+      severity: general
+      findings: [同类序次语层级出现由低层返回高层的问题]
+    evaluation: semantic
+
+  - id: CASE-NUMBER-004
+    capability: review
+    title: 计量、小数和范围写法
+    rule_ids: [NUMBER-ARABIC-MEASURE-001, NUMBER-DECIMAL-001, NUMBER-RANGE-001]
+    input: 合格率为.85，温度范围为15~30%，材料重五千克。
+    expected:
+      outcome: fail
+      severity: general
+      findings: [纯小数缺少定位0, 百分数范围前项百分号不应省略, 带计量单位的数字应使用阿拉伯数字]
+    evaluation: deterministic
+
+  - id: CASE-NUMBER-005
+    capability: review
+    title: 时间及数字形式一致性
+    rule_ids: [NUMBER-CHOICE-001, NUMBER-DATE-001, NUMBER-TIME-001]
+    input: 会议于2026年十月17日下午三时30分召开。
+    expected:
+      outcome: fail
+      severity: general
+      findings: [同类日期时间数字形式应保持一致]
+    forbidden: [宣称所有日期时间只能使用唯一一种数字形式]
+    evaluation: semantic
+
+  - id: CASE-NUMBER-006
+    capability: review
+    title: 概数、零和数字混用
+    rule_ids: [NUMBER-CHINESE-APPROX-001, NUMBER-ZERO-001, NUMBER-MIXED-001]
+    input: 预计需要3、4天，编号写作二零二六号，数量写作4千。
+    expected:
+      outcome: fail
+      severity: general
+      findings: [概数应使用汉字且不用顿号, 编号中的0应写作“○”, 一般数值不得混用阿拉伯数字和汉字数字]
+    evaluation: semantic_and_deterministic

@@ -1,0 +1,81 @@
+schema_version: 1
+source_id: SOURCE-002
+reviewed_at: "2026-10-17"
+review_kind: agent_source_and_visual_comparison
+review_scope: 第1章至第11章及图1至图12
+source_file: ../originals/SOURCE-002-GBT-9704-2012-党政机关公文格式.pdf
+rule_files:
+  - ../../formatting-rules/paper-printing.yaml
+  - ../../formatting-rules/element-layout.yaml
+  - ../../formatting-rules/special-formats.yaml
+  - ../../formatting-rules/document-elements.yaml
+result: passed
+human_approval: approved
+human_approved_at: "2026-10-17"
+human_approved_by: project_maintainer_user
+usable: false
+
+checks:
+  source_identity:
+    status: passed
+    evidence: 标准号、名称、发布实施日期、发布主体和23页页序与来源索引一致。
+  body_completeness:
+    status: passed
+    evidence: 第1章至第11章的范围、引用文件、术语、纸张、版面、印制装订、要素编排、横排表格、引用规范和特定格式全部覆盖。
+  locator_accuracy:
+    status: passed
+    evidence: 正文规则均可定位到章、条或条内分项；式样规则定位到图1至图12。
+  numeric_fidelity:
+    status: passed
+    evidence: 纸张尺寸、页边版心、字号行数、印制误差、装订尺寸及各格式距离均与正文一致。
+  visual_patterns:
+    status: passed
+    evidence: 以110 dpi渲染第12至23页，逐页核对图名、版头主体版记区域、印章、附件、信函和命令式样，未发现图号错配或关键布局遗漏。
+
+section_results:
+  - sections: 第1章至第3章
+    status: source_checked
+    notes: 适用范围、六份规范性引用文件和“字”“行”两个术语均已覆盖。
+  - sections: 第4章至第6章
+    status: source_checked
+    notes: 纸张指标、A4幅面、版面、制版、印刷和三类装订要求全部覆盖。
+  - sections: 第7.1条至第7.5条
+    status: source_checked
+    notes: 版头、主体、版记和页码的全部要素编排规则均已覆盖。
+  - sections: 第8章至第10.3条
+    status: source_checked
+    notes: 横排表格、关联国家标准、信函、命令（令）和纪要格式全部覆盖。
+  - sections: 第11章、图1至图12
+    status: source_checked
+    notes: 12幅式样均已渲染并逐页核对。
+
+figure_results:
+  - locator: 图1
+    status: visual_checked
+    notes: A4纸张、版心、天头、订口和尺寸标注对应正确。
+  - locator: 图2
+    status: visual_checked
+    notes: 一般公文首页的版头、红色分隔线、标题、主送、正文和页码位置对应正确。
+  - locator: 图3至图4
+    status: visual_checked
+    notes: 联合行文首页的多机关标志、发文字号、签发人和首页页码式样对应正确。
+  - locator: 图5至图6
+    status: visual_checked
+    notes: 加盖印章与不加盖印章的末页、附注、抄送和版记式样对应正确。
+  - locator: 图7至图8
+    status: visual_checked
+    notes: 联合行文双印章和多印章末页式样对应正确。
+  - locator: 图9至图10
+    status: visual_checked
+    notes: 附件说明页和带附件末页式样对应正确。
+  - locator: 图11
+    status: visual_checked
+    notes: 信函标志、双红线、版头要素和无首页页码式样对应正确。
+  - locator: 图12
+    status: visual_checked
+    notes: 命令（令）标志、令号、正文、签发人签名章、日期和首页页码式样对应正确。
+
+remaining:
+  - 由项目维护者对照原文和式样完成人工签核。
+  - 为尺寸、位置和条件性格式规则建立测试。
+  - 人工签核和测试完成前不得将本来源标记为可用。

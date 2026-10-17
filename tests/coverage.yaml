@@ -1,0 +1,91 @@
+schema_version: 1
+release: v0.1.0
+status: human_approved
+human_approval: approved
+human_approved_at: "2026-10-17"
+
+policy:
+  behavior_test_required: 直接影响通知、报告、请示起草与审核结果的规则
+  source_check_only:
+    - 条例总则、组织保障、收发办理、归档、保密管理、机构变动和附则
+    - 物理纸张、印刷和装订生产指标
+    - v0.1.0不支持的信函、命令（令）、纪要和横排表格特定格式
+    - 竖排文本及出版物专用的低频标点数字规则
+  duplicate_coverage_records: REG-ARTICLE系列用于证明条例条款完整覆盖，不重复要求每条建立Skill行为样例。
+
+required_rule_ids:
+  document_types:
+    - DOC-TYPE-NOTICE-001
+    - DOC-TYPE-REPORT-001
+    - DOC-TYPE-REQUEST-001
+    - ROUTING-REPORT-001
+    - ROUTING-REQUEST-001
+    - ROUTING-REQUEST-002
+  routing:
+    - ROUTING-GENERAL-001
+    - ROUTING-GENERAL-002
+    - ROUTING-GENERAL-003
+    - ROUTING-UPWARD-001
+    - ROUTING-UPWARD-002
+    - ROUTING-UPWARD-003
+    - ROUTING-UPWARD-004
+    - ROUTING-DOWNWARD-001
+    - ROUTING-DOWNWARD-002
+    - ROUTING-DOWNWARD-003
+    - ROUTING-DOWNWARD-004
+    - ROUTING-JOINT-001
+    - ROUTING-AUTHORITY-001
+  drafting_review:
+    - WRITING-GENERAL-001
+    - WRITING-GENERAL-002
+    - WRITING-GENERAL-003
+    - WRITING-GENERAL-004
+    - WRITING-GENERAL-005
+    - WRITING-GENERAL-006
+    - REVIEW-GENERAL-001
+  document_format:
+    - FORMAT-ELEMENTS-001
+    - FORMAT-TITLE-001
+    - FORMAT-ADDRESSEE-001
+    - FORMAT-DOC-NUMBER-001
+    - FORMAT-SIGNER-001
+    - FORMAT-TITLE-LAYOUT-001
+    - FORMAT-ADDRESSEE-LAYOUT-001
+    - FORMAT-BODY-001
+    - FORMAT-ATTACHMENT-NOTE-001
+    - FORMAT-DATE-001
+    - FORMAT-ATTACHMENT-001
+    - FORMAT-PAGE-NUMBER-001
+  punctuation:
+    - PUNCT-PERIOD-001
+    - PUNCT-QUESTION-001
+    - PUNCT-COMMA-001
+    - PUNCT-ENUMERATION-001
+    - PUNCT-SEMICOLON-001
+    - PUNCT-COLON-001
+    - PUNCT-QUOTATION-001
+    - PUNCT-PARENTHESES-001
+    - PUNCT-TITLE-MARK-001
+    - PUNCT-ANNEX-A02
+    - PUNCT-ANNEX-A09
+    - PUNCT-ANNEX-A13
+    - PUNCT-GUIDE-B03
+  numerals:
+    - NUMBER-ARABIC-MEASURE-001
+    - NUMBER-ARABIC-ID-001
+    - NUMBER-CHINESE-APPROX-001
+    - NUMBER-CHOICE-001
+    - NUMBER-DECIMAL-001
+    - NUMBER-RANGE-001
+    - NUMBER-DATE-001
+    - NUMBER-TIME-001
+    - NUMBER-APPROX-PUNCT-001
+    - NUMBER-ZERO-001
+    - NUMBER-MIXED-001
+
+acceptance:
+  - 每个required_rule_id至少被一个行为样例引用
+  - 每个样例引用的规则编号真实存在
+  - 正例、反例和依赖上下文的边界例均有覆盖
+  - 测试验证可观察行为，不匹配固定措辞
+  - 项目维护者完成人工签核

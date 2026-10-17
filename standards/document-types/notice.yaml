@@ -35,5 +35,5 @@ document_type:
         - source_id: SOURCE-001
           locator: 第八条第八项、第十四条
       review:
-        status: extracted
-        reviewed_at: null
+        status: human_approved
+        reviewed_at: "2026-10-17"
