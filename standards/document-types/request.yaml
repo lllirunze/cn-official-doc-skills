@@ -1,0 +1,69 @@
+schema_version: 1
+document_type:
+  id: request
+  name: 请示
+  category: statutory_document
+  source_definition:
+    source_id: SOURCE-001
+    locator: 第八条第十一项
+  applicable_scenarios:
+    - 向上级机关请求指示
+    - 向上级机关请求批准
+  rules:
+    - id: DOC-TYPE-REQUEST-001
+      title: 请示文种适用范围
+      level: mandatory
+      requirement: 请示应当用于向上级机关请求指示或者批准。
+      validation:
+        mode:
+          - semantic
+          - context_required
+        required_context:
+          - 发文机关
+          - 主送机关
+          - 请求事项
+          - 隶属关系和职权范围
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第八条第十一项
+      review:
+        status: extracted
+        reviewed_at: null
+
+    - id: ROUTING-REQUEST-001
+      title: 请示一文一事
+      level: mandatory
+      requirement: 请示应当一文一事。
+      validation:
+        mode:
+          - semantic
+        check_for:
+          - 是否存在多个可分别处理、分别作出决定的请求事项
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第十五条第四项
+      review:
+        status: extracted
+        reviewed_at: null
+
+    - id: ROUTING-REQUEST-002
+      title: 转报下级请示时提出倾向性意见
+      level: conditional
+      conditions:
+        - 下级机关的请示事项需要以本机关名义向上级机关请示
+      requirement: 本机关应当提出倾向性意见后上报，不得原文转报。
+      validation:
+        mode:
+          - semantic
+          - context_required
+        required_context:
+          - 原请示机关
+          - 转报机关
+          - 上级机关
+          - 本机关倾向性意见
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第十五条第三项
+      review:
+        status: extracted
+        reviewed_at: null

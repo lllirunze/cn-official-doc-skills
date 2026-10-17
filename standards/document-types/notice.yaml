@@ -1,0 +1,39 @@
+schema_version: 1
+document_type:
+  id: notice
+  name: 通知
+  category: statutory_document
+  source_definition:
+    source_id: SOURCE-001
+    locator: 第八条第八项
+  applicable_scenarios:
+    - 发布、传达要求下级机关执行的事项
+    - 发布、传达有关单位周知或者执行的事项
+    - 批转公文
+    - 转发公文
+  exclusions:
+    - id: EXCLUSION-NOTICE-001
+      description: 不能仅凭标题含有“通知”二字认定文种，仍需核对发文目的、受文对象和职权范围。
+      basis:
+        source_id: SOURCE-001
+        locator: 第八条第八项、第十四条
+  rules:
+    - id: DOC-TYPE-NOTICE-001
+      title: 通知文种适用范围
+      level: mandatory
+      requirement: 通知应当用于其法定适用场景，不得仅因需要告知事项而机械选择通知。
+      validation:
+        mode:
+          - semantic
+          - context_required
+        required_context:
+          - 发文目的
+          - 发文机关
+          - 受文对象
+          - 隶属关系和职权范围
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第八条第八项、第十四条
+      review:
+        status: extracted
+        reviewed_at: null

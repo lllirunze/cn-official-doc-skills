@@ -1,0 +1,329 @@
+schema_version: 1
+source_id: SOURCE-004
+scope:
+  normative_sections:
+    - 第1章至第5章
+  applicability: 政府和企事业单位公文可以参照执行
+normative_references:
+  locator: 第2章
+  documents: [GB/T 7408—2005]
+terms:
+  - locator: 第3.1条
+    term: 计量
+    definition: 将数字用于加、减、乘、除等数学运算。
+  - locator: 第3.2条
+    term: 编号
+    definition: 将数字用于为事物命名或排序，但不用于数学运算。
+  - locator: 第3.3条
+    term: 概数
+    definition: 用于模糊计量的数字。
+rules:
+  - id: NUMBER-ARABIC-MEASURE-001
+    title: 计量数字使用阿拉伯数字
+    level: mandatory
+    locator: 第4.1.1条
+    requirements:
+      - 用于计量的数字采用阿拉伯数字。
+      - 数值伴随计量单位时采用阿拉伯数字，计量单位以字母表达时尤其如此。
+    validation:
+      mode:
+        - deterministic
+        - semantic
+    review:
+      status: extracted
+
+  - id: NUMBER-ARABIC-ID-001
+    title: 编号使用阿拉伯数字
+    level: mandatory
+    locator: 第4.1.2条
+    requirements:
+      - 用于为事物命名或者排序的编号数字采用阿拉伯数字。
+    validation:
+      mode:
+        - deterministic
+        - semantic
+    review:
+      status: extracted
+
+  - id: NUMBER-ARABIC-FIXED-001
+    title: 定型词语中的阿拉伯数字
+    level: mandatory
+    locator: 第4.1.3条
+    requirements:
+      - 已广泛使用并稳定定型的事物、现象或者事件名称中包含阿拉伯数字时，保留阿拉伯数字形式。
+    validation:
+      mode:
+        - semantic
+        - context_required
+    review:
+      status: extracted
+
+  - id: NUMBER-CHINESE-CALENDAR-001
+    title: 非公历纪年使用汉字数字
+    level: mandatory
+    locator: 第4.2.1条
+    requirements:
+      - 干支纪年、农历月日、历史朝代纪年及传统使用汉字形式的其他非公历纪年采用汉字数字。
+    validation:
+      mode:
+        - deterministic
+        - semantic
+    review:
+      status: extracted
+
+  - id: NUMBER-CHINESE-APPROX-001
+    title: 概数使用汉字数字
+    level: mandatory
+    locator: 第4.2.2条
+    requirements:
+      - 数字连用表示概数时采用汉字数字。
+      - 含“几”的概数采用汉字数字。
+    validation:
+      mode:
+        - deterministic
+        - semantic
+    review:
+      status: extracted
+
+  - id: NUMBER-CHINESE-FIXED-001
+    title: 定型词语中的汉字数字
+    level: mandatory
+    locator: 第4.2.3条
+    requirements:
+      - 汉语中长期使用且已经稳定定型的词语包含汉字数字时，保留汉字数字形式。
+    validation:
+      mode:
+        - semantic
+        - context_required
+    review:
+      status: extracted
+
+  - id: NUMBER-CHOICE-001
+    title: 两种数字形式均可的场景
+    level: conditional
+    locator: 第4.3条
+    requirements:
+      - 计量或编号所需数字不多，且汉字与阿拉伯数字在简洁性和辨识性上无明显差异时，两种形式均可。
+      - 需要突出简洁醒目时使用阿拉伯数字。
+      - 需要突出庄重典雅时使用汉字数字。
+      - 同一场合遵循同类别同形式；表达功能或者层级不同的数字可以使用不同形式。
+      - 避免相邻阿拉伯数字造成歧义。
+      - 有法律效力的文件、公告文件或者财务文件可以同时采用汉字数字和阿拉伯数字。
+    validation:
+      mode:
+        - semantic
+        - context_required
+    review:
+      status: extracted
+
+  - id: NUMBER-GROUPING-001
+    title: 多位数分节
+    level: conditional
+    locator: 第5.1.1条
+    conditions:
+      - 四位以上的整数或者小数需要分节以便阅读
+    requirements:
+      - 可以使用千分撇：整数部分每三位一组，以逗号分节，小数部分不分节。
+      - 可以使用千分空：从小数点起向左右每三位一组，组间空四分之一个汉字。
+      - 四位以内整数可以不分节或者不加千分空。
+      - 科学技术领域的多位数分节按GB 3101执行。
+    validation:
+      mode:
+        - deterministic
+        - context_required
+    review:
+      status: extracted
+
+  - id: NUMBER-DECIMAL-001
+    title: 纯小数写法
+    level: mandatory
+    locator: 第5.1.2条
+    requirements:
+      - 纯小数必须写出小数点前用于定位的0。
+      - 小数点使用与阿拉伯数字底线齐平的实心点。
+    validation:
+      mode:
+        - deterministic
+    review:
+      status: extracted
+
+  - id: NUMBER-RANGE-001
+    title: 数值范围写法
+    level: mandatory
+    locator: 第5.1.3条
+    requirements:
+      - 数值范围可以使用浪纹线连接号或者一字线连接号。
+      - 前后数值的附加符号或计量单位相同时，在不造成歧义的情况下可以省略前一个数值的符号或单位。
+      - 省略会造成歧义时不得省略。
+    validation:
+      mode:
+        - deterministic
+        - semantic
+    review:
+      status: extracted
+
+  - id: NUMBER-DATE-001
+    title: 年月日写法
+    level: mandatory
+    locator: 第5.1.4条
+    requirements:
+      - 年月日按照口语中年、月、日的自然顺序书写。
+      - 可以依照GB/T 7408规定的扩展格式用短横线替代“年”“月”。
+      - 年月日不完整时不得使用短横线替代。
+      - 四位年份不得简写为两位。
+      - 使用短横线格式时，一位数的月和日可以补0。
+    validation:
+      mode:
+        - deterministic
+        - context_required
+    review:
+      status: extracted
+
+  - id: NUMBER-TIME-001
+    title: 时分秒写法
+    level: mandatory
+    locator: 第5.1.5条
+    requirements:
+      - 可以采用12小时制或者24小时制。
+      - 时分秒按照口语中时、分、秒的自然顺序书写。
+      - 可以依照GB/T 7408规定的扩展格式使用冒号替代“时”“分”。
+    validation:
+      mode:
+        - deterministic
+    review:
+      status: extracted
+
+  - id: NUMBER-NAMED-DATE-ARABIC-001
+    title: 阿拉伯数字月日专名
+    level: mandatory
+    locator: 第5.1.6条
+    requirements:
+      - 含月日的专名使用阿拉伯数字时，以间隔号分隔月和日。
+      - 该专名前后加引号。
+    validation:
+      mode:
+        - deterministic
+        - semantic
+    review:
+      status: extracted
+
+  - id: NUMBER-TYPEFACE-001
+    title: 阿拉伯数字字体
+    level: recommended
+    locator: 第5.1.7.1条
+    requirements:
+      - 出版物中的阿拉伯数字一般使用正体二分字身，占半个汉字位置。
+    validation:
+      mode:
+        - deterministic
+    review:
+      status: extracted
+
+  - id: NUMBER-LINEBREAK-001
+    title: 数值不得断行
+    level: mandatory
+    locator: 第5.1.7.2条
+    requirements:
+      - 一个以阿拉伯数字书写的数值应保持在同一行，避免断开。
+    validation:
+      mode:
+        - deterministic
+    review:
+      status: extracted
+
+  - id: NUMBER-VERTICAL-001
+    title: 竖排文本数字方向
+    level: mandatory
+    locator: 第5.1.7.3条
+    conditions:
+      - 使用竖排文字
+    requirements:
+      - 阿拉伯数字按顺时针方向旋转90度。
+      - 旋转后同一词语单位内文字方向保持一致。
+    validation:
+      mode:
+        - deterministic
+        - human_review
+    review:
+      status: extracted
+
+  - id: NUMBER-APPROX-PUNCT-001
+    title: 汉字概数不用顿号
+    level: mandatory
+    locator: 第5.2.1条
+    requirements:
+      - 两个数字连用表示概数时，数字之间不用顿号。
+    validation:
+      mode:
+        - deterministic
+        - semantic
+    review:
+      status: extracted
+
+  - id: NUMBER-YEAR-CHINESE-001
+    title: 汉字年份避免歧义性简写
+    level: conditional
+    locator: 第5.2.2条
+    requirements:
+      - 年份简写后可能被理解为概数时，一般不简写。
+    validation:
+      mode:
+        - semantic
+    review:
+      status: extracted
+
+  - id: NUMBER-NAMED-DATE-CHINESE-001
+    title: 汉字数字月日专名
+    level: mandatory
+    locator: 第5.2.3条
+    requirements:
+      - 含月日的专名使用汉字数字时，涉及一月、十一月、十二月的，在月和日之间使用间隔号。
+      - 涉及其他月份时不使用间隔号。
+    validation:
+      mode:
+        - deterministic
+        - semantic
+    review:
+      status: extracted
+
+  - id: NUMBER-UPPERCASE-001
+    title: 大写汉字数字
+    level: mandatory
+    locator: 第5.2.4条
+    requirements:
+      - 大写汉字数字使用零、壹、贰、叁、肆、伍、陆、柒、捌、玖、拾、佰、仟、万、亿。
+      - 法律文书和财务票据使用大写汉字数字记数。
+    validation:
+      mode:
+        - deterministic
+        - context_required
+    review:
+      status: extracted
+
+  - id: NUMBER-ZERO-001
+    title: 零和○的区分
+    level: mandatory
+    locator: 第5.2.5条
+    requirements:
+      - 数字用于计量时，0的汉字形式写作“零”。
+      - 数字用于编号时，0的汉字形式写作“○”。
+    validation:
+      mode:
+        - deterministic
+        - semantic
+    review:
+      status: extracted
+
+  - id: NUMBER-MIXED-001
+    title: 阿拉伯数字与汉字数字混用
+    level: mandatory
+    locator: 第5.3条
+    requirements:
+      - 数值很大时，可以将“万”“亿”作为汉字单位，其余部分使用阿拉伯数字。
+      - 除上述情况外，一般数值不得在同一个数值内部混用阿拉伯数字和汉字数字。
+    validation:
+      mode:
+        - deterministic
+        - semantic
+    review:
+      status: extracted

@@ -1,0 +1,90 @@
+schema_version: 1
+last_updated: "2026-10-17"
+
+sources:
+  - id: SOURCE-001
+    title: 党政机关公文处理工作条例
+    document_number: null
+    authority:
+      - 中共中央办公厅
+      - 国务院办公厅
+    source_type: regulation
+    effective_at: "2012-07-01"
+    web_published_at: "2013-02-22"
+    official_url: https://www.gov.cn/zhengce/2013-02/22/content_2640088.htm
+    local_file: originals/SOURCE-001-党政机关公文处理工作条例.pdf
+    sha256: e7a782f56cc044b82ec935769703bed8ed0d13630568774e7065783c488f2df5
+    pages: 11
+    import_status: extracted
+    identity_check: cover_verified
+    completeness_check: article_sequence_1_to_42_verified
+    text_extraction_check: all_pages_readable
+    validity_status: pending_verification
+    redistribution: unknown
+    notes: 中国政府网页面导出的 PDF；第1条至第42条及全部分项已完成首轮结构化提取，待人工复核；许可确认前不提交原文。
+
+  - id: SOURCE-002
+    title: 党政机关公文格式
+    document_number: GB/T 9704-2012
+    authority:
+      - 中华人民共和国国家质量监督检验检疫总局
+      - 中国国家标准化管理委员会
+    source_type: national_standard
+    issued_at: "2012-06-29"
+    effective_at: "2012-07-01"
+    official_url: https://openstd.samr.gov.cn/bzgk/std/std_list?p.p1=0&p.p90=circulation_date&p.p91=desc&p.p2=GB%2FT%209704-2012
+    local_file: originals/SOURCE-002-GBT-9704-2012-党政机关公文格式.pdf
+    sha256: bc8dfb659eb6122fa342d11629b622b50ab6bde9a206ee26cda9ef45e21e1103
+    pages: 23
+    import_status: extracted
+    identity_check: cover_verified
+    completeness_check: page_sequence_verified
+    text_extraction_check: all_pages_readable
+    validity_status: current_on_official_index
+    validity_checked_at: "2026-10-17"
+    redistribution: unknown
+    notes: 全部正文规则已完成首轮提取；图1至图12待人工视觉复核。许可确认前不提交原文。
+
+  - id: SOURCE-003
+    title: 标点符号用法
+    document_number: GB/T 15834-2011
+    authority:
+      - 中华人民共和国国家质量监督检验检疫总局
+      - 中国国家标准化管理委员会
+    source_type: national_standard
+    issued_at: "2011-12-30"
+    effective_at: "2012-06-01"
+    official_url: https://openstd.samr.gov.cn/bzgk/std/std_list?p.p1=0&p.p90=circulation_date&p.p91=desc&p.p2=GB%2FT%2015834-2011
+    local_file: originals/SOURCE-003-GBT-15834-2011-标点符号用法.pdf
+    sha256: 09221ea0ec46c9880819efbefa3b3b4fff8de8bcbac3521a11ded564c4261934
+    pages: 25
+    import_status: extracted
+    identity_check: cover_verified
+    completeness_check: page_sequence_verified
+    text_extraction_check: all_pages_readable
+    validity_status: current_on_official_index
+    validity_checked_at: "2026-10-17"
+    redistribution: unknown
+    notes: 第1章至第5章和规范性附录A已完成首轮提取；资料性附录B作为非强制指导登记；待人工复核。许可确认前不提交原文。
+
+  - id: SOURCE-004
+    title: 出版物上数字用法
+    document_number: GB/T 15835-2011
+    authority:
+      - 中华人民共和国国家质量监督检验检疫总局
+      - 中国国家标准化管理委员会
+    source_type: national_standard
+    issued_at: "2011-07-29"
+    effective_at: "2011-11-01"
+    official_url: https://openstd.samr.gov.cn/bzgk/std/std_list?p.p1=0&p.p90=circulation_date&p.p91=desc&p.p2=GB%2FT%2015835-2011
+    local_file: originals/SOURCE-004-GBT-15835-2011-出版物上数字用法.pdf
+    sha256: 9cd0b1945fdb8063c6b8714e2d3fda18e5a0be0db11d081c68ed7eb5a28ebf16
+    pages: 9
+    import_status: extracted
+    identity_check: cover_verified
+    completeness_check: page_sequence_verified
+    text_extraction_check: all_pages_readable
+    validity_status: current_on_official_index
+    validity_checked_at: "2026-10-17"
+    redistribution: unknown
+    notes: 第1章至第5章已完成首轮结构化提取，待人工复核；许可确认前不提交原文。

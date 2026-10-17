@@ -1,0 +1,357 @@
+schema_version: 1
+source_id: SOURCE-001
+scope: 《党政机关公文处理工作条例》第一条至第四十二条及全部分项
+rules:
+  - id: REG-ARTICLE-001
+    locator: 第一条
+    title: 制定目的
+    level: mandatory
+    requirement: 本条例用于适应党政机关工作需要，推进公文处理科学化、制度化、规范化。
+    review: {status: extracted}
+  - id: REG-ARTICLE-002
+    locator: 第二条
+    title: 适用范围
+    level: mandatory
+    requirement: 本条例适用于各级党政机关公文处理工作。
+    review: {status: extracted}
+  - id: REG-ARTICLE-003
+    locator: 第三条
+    title: 党政机关公文定义和作用
+    level: mandatory
+    requirement: 党政机关公文是实施领导、履行职能、处理公务并具有特定效力和规范体式的文书，用于贯彻政策、公布法规规章、指导布置商洽工作、请示答复问题及报告通报交流情况等。
+    review: {status: extracted}
+  - id: REG-ARTICLE-004
+    locator: 第四条
+    title: 公文处理工作范围
+    level: mandatory
+    requirement: 公文处理包括公文拟制、办理、管理等相互关联、衔接有序的工作。
+    review: {status: extracted}
+  - id: REG-ARTICLE-005
+    locator: 第五条
+    title: 公文处理原则
+    level: mandatory
+    requirements: [实事求是, 准确规范, 精简高效, 安全保密]
+    review: {status: extracted}
+  - id: REG-ARTICLE-006
+    locator: 第六条
+    title: 组织领导和人员保障
+    level: mandatory
+    requirement: 各级党政机关应重视公文处理，加强组织领导和队伍建设，设立文秘部门或指定专人负责。
+    review: {status: extracted}
+  - id: REG-ARTICLE-007
+    locator: 第七条
+    title: 主管部门职责
+    level: mandatory
+    requirement: 各级党政机关办公厅（室）主管本机关公文处理，并指导、督促检查下级机关相关工作。
+    review: {status: extracted}
+  - id: REG-ARTICLE-008
+    locator: 第八条第一项至第十五项
+    title: 十五种主要公文种类及适用范围
+    level: mandatory
+    document_types:
+      决议: 会议讨论通过的重大决策事项
+      决定: 重要事项决策部署、奖惩单位人员、变更或撤销下级机关不适当决定事项
+      命令（令）: 公布行政法规规章、宣布重大强制措施、批准授予晋升衔级、嘉奖单位人员
+      公报: 公布重要决定或重大事项
+      公告: 向国内外宣布重要事项或法定事项
+      通告: 在一定范围公布应遵守或周知事项
+      意见: 对重要问题提出见解和处理办法
+      通知: 发布传达要求下级执行和有关单位周知或执行的事项，批转转发公文
+      通报: 表彰先进、批评错误、传达重要精神、告知重要情况
+      报告: 向上级汇报工作、反映情况、回复询问
+      请示: 向上级请求指示或批准
+      批复: 答复下级机关请示事项
+      议案: 各级人民政府依法向同级人大或其常委会提请审议事项
+      函: 不相隶属机关间商洽、询问答复、请求批准和答复审批事项
+      纪要: 记载会议主要情况和议定事项
+    review: {status: extracted}
+  - id: REG-ARTICLE-009
+    locator: 第九条第一项至第十八项
+    title: 公文组成要素
+    level: mandatory
+    elements:
+      份号: 涉密公文应标注印制份数顺序号
+      密级和保密期限: 涉密公文按程度标注绝密、机密或秘密及保密期限
+      紧急程度: 紧急公文标特急或加急；电报标特提、特急、加急或平急
+      发文机关标志: 使用机关全称或规范简称，可加“文件”；联合行文可并列或仅用主办机关名称
+      发文字号: 由机关代字、年份和顺序号组成；联合行文使用主办机关字号
+      签发人: 上行文应标注签发人姓名
+      标题: 由发文机关名称、事由和文种组成
+      主送机关: 使用主要受理机关全称、规范简称或同类型统称
+      正文: 表述公文内容的主体
+      附件说明: 标明附件顺序号和名称
+      发文机关署名: 使用机关全称或规范简称
+      成文日期: 使用会议通过或负责人签发日期；联合行文用最后签发机关负责人签发日期
+      印章: 有署名的公文应盖相符印章；特定标志的普发公文和电报可不盖章
+      附注: 说明印发传达范围等事项
+      附件: 正文的说明、补充或参考资料
+      抄送机关: 使用需执行或知晓内容的其他机关全称、规范简称或同类型统称
+      印发机关和印发日期: 标明送印机关和送印日期
+      页码: 公文页数顺序号
+    review: {status: extracted}
+  - id: REG-ARTICLE-010
+    locator: 第十条
+    title: 公文版式标准
+    level: mandatory
+    requirement: 公文版式按《党政机关公文格式》国家标准执行。
+    review: {status: extracted}
+  - id: REG-ARTICLE-011
+    locator: 第十一条
+    title: 字符、计量单位和标点规范
+    level: mandatory
+    requirements:
+      - 汉字、数字、外文字符、计量单位和标点符号按有关国家标准和规定执行。
+      - 民族自治地方公文可以并用汉字和当地通用少数民族文字。
+    review: {status: extracted}
+  - id: REG-ARTICLE-012
+    locator: 第十二条
+    title: 公文用纸幅面
+    level: mandatory
+    requirements: [一般公文用纸采用国际标准A4型, 特殊形式公文用纸按实际需要确定]
+    review: {status: extracted}
+  - id: REG-ARTICLE-013
+    locator: 第十三条
+    title: 行文必要性和实效性
+    level: mandatory
+    requirement: 行文应确有必要，讲求实效，注重针对性和可操作性。
+    review: {status: extracted}
+  - id: REG-ARTICLE-014
+    locator: 第十四条
+    title: 行文关系和越级限制
+    level: mandatory
+    requirements: [按隶属关系和职权范围确定行文关系, 一般不得越级行文, 特殊情况越级时同时抄送被越过机关]
+    review: {status: extracted}
+  - id: REG-ARTICLE-015
+    locator: 第十五条第一项至第六项
+    title: 向上级机关行文规则
+    level: mandatory
+    requirements:
+      - 原则上主送一个上级，可按需抄送相关上级和同级，不抄送下级。
+      - 党委政府部门向上级主管部门请示报告重大事项须经本级党委政府同意或授权；部门职权事项直接报上级主管部门。
+      - 下级请示需以本机关名义再请示时，应提出倾向性意见，不得原文转报。
+      - 请示一文一事，不得在报告等非请示公文中夹带请示。
+      - 除负责人直接交办外，不以本机关名义向上级负责人报文，也不以本机关负责人名义向上级机关报文。
+      - 双重领导机关向一个上级行文，必要时抄送另一个上级。
+    review: {status: extracted}
+  - id: REG-ARTICLE-016
+    locator: 第十六条第一项至第五项
+    title: 向下级机关行文规则
+    level: mandatory
+    requirements:
+      - 主送受理机关并按需抄送；重要行文同时抄送发文机关直接上级。
+      - 办公厅（室）可按授权向下级党委政府行文；其他部门单位不得向其发布或提出指令性要求；经政府同意由职能部门行文的须在文中注明。
+      - 党委政府部门可在职权范围内向下级党委政府相关部门行文。
+      - 多部门职权事项未协商一致不得向下行文；擅自行文由上级责令纠正或撤销。
+      - 上级向受双重领导的下级行文，必要时抄送其另一个上级。
+    review: {status: extracted}
+  - id: REG-ARTICLE-017
+    locator: 第十七条
+    title: 联合行文和部门行文权限
+    level: mandatory
+    requirements:
+      - 同级党政机关及其与其他同级机关必要时可以联合行文，属于党委政府各自职权的工作不得联合行文。
+      - 党委政府部门可依据职权相互行文。
+      - 部门内设机构除办公厅（室）外不得对外正式行文。
+    review: {status: extracted}
+  - id: REG-ARTICLE-018
+    locator: 第十八条
+    title: 公文拟制程序
+    level: mandatory
+    requirement: 公文拟制包括起草、审核和签发。
+    review: {status: extracted}
+  - id: REG-ARTICLE-019
+    locator: 第十九条第一项至第七项
+    title: 公文起草要求
+    level: mandatory
+    requirements:
+      - 符合党的理论路线方针政策和国家法律法规，完整准确体现机关意图，并与现行公文衔接。
+      - 从实际出发，实事求是分析，政策措施和办法切实可行。
+      - 内容简洁、主题突出、观点鲜明、结构严谨、表述准确、文字精练。
+      - 文种正确、格式规范。
+      - 深入调查研究、充分论证、广泛听取意见。
+      - 涉及其他地区或部门职权的，必须征求意见并力求一致。
+      - 机关负责人主持、指导重要公文起草。
+    review: {status: extracted}
+  - id: REG-ARTICLE-020
+    locator: 第二十条第一项至第五项及第二款
+    title: 签发前审核
+    level: mandatory
+    requirements:
+      - 签发前由发文机关办公厅（室）审核；需机关审议的重要文稿在审议前初核。
+      - 审核行文理由和依据。
+      - 审核政策法律符合性、机关意图、现行公文衔接和措施可行性。
+      - 审核跨地区部门事项是否充分协商并一致。
+      - 审核文种格式，以及人名地名时间数字段落引文和文字、数字、计量单位、标点规范性。
+      - 审核其他起草要求。
+    review: {status: extracted}
+  - id: REG-ARTICLE-021
+    locator: 第二十一条
+    title: 审核后的退回和修改
+    level: mandatory
+    requirement: 不宜发文的退回起草单位并说明理由；可发但需研究修改的，由起草单位修改后重新报送。
+    review: {status: extracted}
+  - id: REG-ARTICLE-022
+    locator: 第二十二条
+    title: 审批签发和会签
+    level: mandatory
+    requirements:
+      - 公文由本机关负责人审批签发，重要公文和上行文由主要负责人签发。
+      - 办公厅（室）按授权制发的公文由受权机关主要负责人或按规定签发。
+      - 签发人签署意见、姓名和完整日期；圈阅或签名视为同意。
+      - 联合发文由所有联署机关负责人会签。
+    review: {status: extracted}
+  - id: REG-ARTICLE-023
+    locator: 第二十三条
+    title: 公文办理范围
+    level: mandatory
+    requirement: 公文办理包括收文办理、发文办理和整理归档。
+    review: {status: extracted}
+  - id: REG-ARTICLE-024
+    locator: 第二十四条第一项至第七项
+    title: 收文办理程序
+    level: mandatory
+    procedures:
+      签收: 逐件清点核对，签字或盖章并注明时间
+      登记: 详细记载主要信息和办理情况
+      初审: 审查本机关是否办理、行文规则、文种格式、协商会签及其他起草要求；不合规定及时退回并说明理由
+      承办: 阅知件确定范围分送；批办件拟办后报批或转办；多部门办理明确主办；紧急件明确时限并及时办结
+      传阅: 按批示和需要及时传阅，掌握去向，防止漏传误传延误
+      催办: 掌握进展并督促按期办结；紧急或重要公文专人催办
+      答复: 及时答复来文单位并按需告知相关单位
+    review: {status: extracted}
+  - id: REG-ARTICLE-025
+    locator: 第二十五条第一项至第四项
+    title: 发文办理程序
+    level: mandatory
+    procedures:
+      复核: 印发前复核审批手续、内容、文种和格式；实质性修改报原签批人复审
+      登记: 确定发文字号、分送范围、印制份数并详细记载
+      印制: 确保质量时效；涉密公文在符合保密要求场所印制
+      核发: 检查文字、格式和印刷质量后分发
+    review: {status: extracted}
+  - id: REG-ARTICLE-026
+    locator: 第二十六条
+    title: 涉密公文传递和传输
+    level: mandatory
+    requirement: 涉密公文通过规定的机要渠道或机要人员传递，通过密码电报或符合国家保密规定的计算机信息系统传输。
+    review: {status: extracted}
+  - id: REG-ARTICLE-027
+    locator: 第二十七条
+    title: 公文归档
+    level: mandatory
+    requirements:
+      - 需归档公文材料按档案法规和机关规定及时收集齐全、整理归档。
+      - 联合办理公文原件由主办机关归档，相关机关保存复制件。
+      - 负责人兼职履职形成的公文由兼职机关归档。
+    review: {status: extracted}
+  - id: REG-ARTICLE-028
+    locator: 第二十八条
+    title: 建立公文管理制度
+    level: mandatory
+    requirement: 各级党政机关建立健全公文管理制度，确保严格规范并发挥公文效用。
+    review: {status: extracted}
+  - id: REG-ARTICLE-029
+    locator: 第二十九条
+    title: 公文统一管理和保密设施
+    level: mandatory
+    requirements:
+      - 公文由文秘部门或专人统一管理。
+      - 设党委（党组）的县级以上单位建立机要保密室和机要阅文室，按规定配备人员和设施设备。
+    review: {status: extracted}
+  - id: REG-ARTICLE-030
+    locator: 第三十条
+    title: 密级确定、管理、变更和解除
+    level: mandatory
+    requirements:
+      - 确定密级前按拟定密级先行采取保密措施，确定后严格按所定密级管理。
+      - 绝密级公文由专人管理。
+      - 密级变更或解除由原定密机关或其上级机关决定。
+    review: {status: extracted}
+  - id: REG-ARTICLE-031
+    locator: 第三十一条
+    title: 传达范围和公开发布
+    level: mandatory
+    requirements:
+      - 印发传达范围按发文机关要求执行，变更须经发文机关批准。
+      - 涉密公文公开发布前履行解密程序；时间、形式和渠道由发文机关确定。
+      - 经批准公开发布的公文与正式印发公文具有同等效力。
+    review: {status: extracted}
+  - id: REG-ARTICLE-032
+    locator: 第三十二条
+    title: 涉密公文复制、翻印和汇编
+    level: mandatory
+    requirements:
+      - 复制汇编机密或秘密公文须符合规定并经本机关负责人批准。
+      - 绝密公文一般不得复制汇编；确需时经发文机关或其上级批准。
+      - 复制汇编件视同原件管理；复制件盖复制机关戳记，翻印件注明机关和日期。
+      - 汇编本按所编公文最高密级标注。
+    review: {status: extracted}
+  - id: REG-ARTICLE-033
+    locator: 第三十三条
+    title: 公文撤销和废止
+    level: mandatory
+    requirements:
+      - 撤销或废止由发文机关、上级机关或权力机关依职权和法规决定。
+      - 撤销视为自始无效，废止视为自废止日起失效。
+    review: {status: extracted}
+  - id: REG-ARTICLE-034
+    locator: 第三十四条
+    title: 涉密公文清退和销毁
+    level: mandatory
+    requirement: 涉密公文按发文机关要求和有关规定清退或销毁。
+    review: {status: extracted}
+  - id: REG-ARTICLE-035
+    locator: 第三十五条
+    title: 无保存价值公文销毁
+    level: mandatory
+    requirements:
+      - 不具归档保存价值的公文经批准可销毁。
+      - 销毁涉密公文严格履行审批登记并确保不丢失、不漏销。
+      - 个人不得私自销毁或留存涉密公文。
+    review: {status: extracted}
+  - id: REG-ARTICLE-036
+    locator: 第三十六条
+    title: 机构变动和人员离岗时的公文管理
+    level: mandatory
+    requirements:
+      - 机关合并时全部公文随之合并管理；撤销时需归档公文整理后移交档案部门。
+      - 人员离岗离职时，所在机关督促其移交、清退暂存借用公文。
+    review: {status: extracted}
+  - id: REG-ARTICLE-037
+    locator: 第三十七条
+    title: 发文立户
+    level: mandatory
+    requirement: 新设机关向本级党委政府办公厅（室）申请发文立户，经审查符合条件列为发文单位；机关合并撤销时相应调整。
+    review: {status: extracted}
+  - id: REG-ARTICLE-038
+    locator: 第三十八条
+    title: 电子公文
+    level: mandatory
+    requirement: 党政机关公文包括电子公文，其具体处理办法另行制定。
+    review: {status: extracted}
+  - id: REG-ARTICLE-039
+    locator: 第三十九条
+    title: 法规规章和外事公文
+    level: mandatory
+    requirement: 法规规章方面公文按有关规定处理，外事方面公文按外事主管部门规定处理。
+    review: {status: extracted}
+  - id: REG-ARTICLE-040
+    locator: 第四十条
+    title: 其他机关单位参照执行
+    level: conditional
+    requirement: 其他机关和单位的公文处理工作可以参照本条例执行。
+    review: {status: extracted}
+  - id: REG-ARTICLE-041
+    locator: 第四十一条
+    title: 解释机关
+    level: mandatory
+    requirement: 本条例由中共中央办公厅、国务院办公厅负责解释。
+    review: {status: extracted}
+  - id: REG-ARTICLE-042
+    locator: 第四十二条
+    title: 施行日期和旧规停止执行
+    level: mandatory
+    requirements:
+      - 本条例自2012年7月1日起施行。
+      - 1996年《中国共产党机关公文处理条例》和2000年《国家行政机关公文处理办法》停止执行。
+    review: {status: extracted}

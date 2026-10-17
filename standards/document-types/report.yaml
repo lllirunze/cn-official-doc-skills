@@ -1,0 +1,49 @@
+schema_version: 1
+document_type:
+  id: report
+  name: 报告
+  category: statutory_document
+  source_definition:
+    source_id: SOURCE-001
+    locator: 第八条第十项
+  applicable_scenarios:
+    - 向上级机关汇报工作
+    - 向上级机关反映情况
+    - 回复上级机关的询问
+  rules:
+    - id: DOC-TYPE-REPORT-001
+      title: 报告文种适用范围
+      level: mandatory
+      requirement: 报告应当用于向上级机关汇报工作、反映情况或者回复询问。
+      validation:
+        mode:
+          - semantic
+          - context_required
+        required_context:
+          - 发文机关
+          - 主送机关
+          - 行文目的
+          - 隶属关系
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第八条第十项
+      review:
+        status: extracted
+        reviewed_at: null
+
+    - id: ROUTING-REPORT-001
+      title: 报告不得夹带请示事项
+      level: mandatory
+      requirement: 报告等非请示性公文中不得夹带需要上级机关指示、批准的事项。
+      validation:
+        mode:
+          - semantic
+        check_for:
+          - 请求上级机关作出指示
+          - 请求上级机关批准事项
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第十五条第四项
+      review:
+        status: extracted
+        reviewed_at: null

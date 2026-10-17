@@ -1,0 +1,41 @@
+schema_version: 1
+policy:
+  usable_requires:
+    - 全部正文规范性条款已入库
+    - 全部规范性附录已入库
+    - 资料性附录已登记并与强制规则区分
+    - 每条规则具有精确来源定位
+    - 覆盖检查和人工复核均已通过
+
+sources:
+  - source_id: SOURCE-001
+    expected_scope: 第1条至第42条及其全部分项
+    machine_readable: true
+    extraction_status: complete
+    review_status: pending
+    usable: false
+    remaining: 待人工逐条复核
+
+  - source_id: SOURCE-002
+    expected_scope: 第1章至第11章及图1至图12
+    machine_readable: true
+    extraction_status: complete
+    review_status: pending
+    usable: false
+    remaining: 待人工逐条复核及式样视觉复核
+
+  - source_id: SOURCE-003
+    expected_scope: 第1章至第5章、规范性附录A、资料性附录B
+    machine_readable: true
+    extraction_status: complete
+    review_status: pending
+    usable: false
+    remaining: 待人工逐条复核；资料性附录B已作为非强制指导单独登记
+
+  - source_id: SOURCE-004
+    expected_scope: 第1章至第5章
+    machine_readable: true
+    extraction_status: complete
+    review_status: pending
+    usable: false
+    remaining: 待人工逐条复核

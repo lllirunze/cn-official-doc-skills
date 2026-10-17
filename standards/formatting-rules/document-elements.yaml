@@ -1,0 +1,100 @@
+schema_version: 1
+rules:
+  - id: FORMAT-ELEMENTS-001
+    title: 公文一般组成要素
+    level: conditional
+    requirement: 公文一般由份号、密级和保密期限、紧急程度、发文机关标志、发文字号、签发人、标题、主送机关、正文、附件说明、发文机关署名、成文日期、印章、附注、附件、抄送机关、印发机关和印发日期、页码等要素组成。
+    interpretation: “一般由”不表示每份公文必须同时具备全部要素，应当结合文种、行文方向、内容和具体条件判断。
+    validation:
+      mode:
+        - deterministic
+        - context_required
+    source_refs:
+      - source_id: SOURCE-001
+        locator: 第九条
+    review:
+      status: extracted
+      reviewed_at: null
+
+  - id: FORMAT-TITLE-001
+    title: 标题组成
+    level: conditional
+    requirement: 公文标题由发文机关名称、事由和文种组成。
+    validation:
+      mode:
+        - semantic
+        - deterministic
+    source_refs:
+      - source_id: SOURCE-001
+        locator: 第九条第七项
+    review:
+      status: extracted
+      reviewed_at: null
+
+  - id: FORMAT-ADDRESSEE-001
+    title: 主送机关名称
+    level: conditional
+    conditions:
+      - 公文具有主送机关
+    requirement: 主送机关应当使用机关全称、规范化简称或者同类型机关统称。
+    validation:
+      mode:
+        - context_required
+        - human_review
+    source_refs:
+      - source_id: SOURCE-001
+        locator: 第九条第八项
+    review:
+      status: extracted
+      reviewed_at: null
+
+  - id: FORMAT-LAYOUT-001
+    title: 公文版式依据
+    level: mandatory
+    requirement: 公文版式按照《党政机关公文格式》国家标准执行。
+    validation:
+      mode:
+        - deterministic
+        - human_review
+    source_refs:
+      - source_id: SOURCE-001
+        locator: 第十条
+      - source_id: SOURCE-002
+        locator: 全文
+    review:
+      status: extracted
+      reviewed_at: null
+
+  - id: FORMAT-SYMBOLS-001
+    title: 汉字数字外文字符计量单位和标点依据
+    level: mandatory
+    requirement: 公文使用的汉字、数字、外文字符、计量单位和标点符号等，应当按照有关国家标准和规定执行。
+    validation:
+      mode:
+        - deterministic
+        - semantic
+    source_refs:
+      - source_id: SOURCE-001
+        locator: 第十一条
+      - source_id: SOURCE-003
+        locator: 全文
+      - source_id: SOURCE-004
+        locator: 全文
+    review:
+      status: extracted
+      reviewed_at: null
+
+  - id: FORMAT-PAPER-001
+    title: 公文用纸幅面
+    level: mandatory
+    requirement: 公文用纸幅面采用国际标准 A4 型；特殊形式根据实际需要确定。
+    validation:
+      mode:
+        - deterministic
+        - context_required
+    source_refs:
+      - source_id: SOURCE-001
+        locator: 第十二条
+    review:
+      status: extracted
+      reviewed_at: null

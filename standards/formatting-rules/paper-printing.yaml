@@ -1,0 +1,191 @@
+schema_version: 1
+source_id: SOURCE-002
+scope:
+  locator: 第1章
+  applicability:
+    - 各级党政机关制发的公文
+    - 其他机关和单位可以参照执行
+    - 少数民族文字公文的用纸、幅面、版面和印制要求依本标准执行，其余参照并按有关规定执行
+normative_references:
+  locator: 第2章
+  documents: [GB/T 148, GB 3100, GB 3101, GB 3102（所有部分）, GB/T 15834, GB/T 15835]
+terms:
+  - locator: 第3.1条
+    term: 字
+    definition: 公文横向距离的长度单位，一个字指一个汉字宽度的距离。
+  - locator: 第3.2条
+    term: 行
+    definition: 公文纵向距离的长度单位，一行指一个汉字高度加3号汉字高度七分之八的距离。
+rules:
+  - id: FORMAT-PAPER-TECH-001
+    title: 公文用纸技术指标
+    level: recommended
+    locator: 第4章
+    requirements:
+      - 公文用纸一般使用定量为每平方米60克至80克的胶版印刷纸或复印纸。
+      - 纸张白度为80%至90%。
+      - 横向耐折度不低于15次。
+      - 不透明度不低于85%。
+      - pH值为7.5至9.5。
+    validation:
+      mode:
+        - deterministic
+        - human_review
+    review:
+      status: extracted
+
+  - id: FORMAT-PAPER-SIZE-001
+    title: 公文用纸幅面尺寸
+    level: mandatory
+    locator: 第5.1条
+    requirements:
+      - 公文用纸采用GB/T 148规定的A4型纸。
+      - 成品幅面尺寸为210毫米×297毫米。
+    validation:
+      mode:
+        - deterministic
+    review:
+      status: extracted
+
+  - id: FORMAT-PAGE-MARGIN-001
+    title: 页边与版心尺寸
+    level: mandatory
+    locator: 第5.2.1条
+    requirements:
+      - 天头为37毫米，允许误差1毫米。
+      - 订口为28毫米，允许误差1毫米。
+      - 版心尺寸为156毫米×225毫米。
+    validation:
+      mode:
+        - deterministic
+    review:
+      status: extracted
+
+  - id: FORMAT-DEFAULT-FONT-001
+    title: 默认字体和字号
+    level: conditional
+    locator: 第5.2.2条
+    requirements:
+      - 无特殊说明时，公文格式各要素一般使用3号仿宋体字。
+      - 特定情况可以适当调整。
+    validation:
+      mode:
+        - deterministic
+        - context_required
+    review:
+      status: extracted
+
+  - id: FORMAT-LINES-CHARS-001
+    title: 每面行数和每行字数
+    level: conditional
+    locator: 第5.2.3条
+    requirements:
+      - 一般每面排22行。
+      - 一般每行排28个字。
+      - 文字应撑满版心。
+      - 特定情况可以适当调整。
+    validation:
+      mode:
+        - deterministic
+        - context_required
+    review:
+      status: extracted
+
+  - id: FORMAT-TEXT-COLOR-001
+    title: 文字颜色
+    level: conditional
+    locator: 第5.2.4条
+    requirements:
+      - 无特殊说明时，公文中文字均为黑色。
+    validation:
+      mode:
+        - deterministic
+        - context_required
+    review:
+      status: extracted
+
+  - id: FORMAT-PLATE-001
+    title: 制版质量
+    level: mandatory
+    locator: 第6.1条
+    requirements:
+      - 版面干净无底灰。
+      - 字迹清楚无断划。
+      - 尺寸标准。
+      - 版心不斜。
+      - 制版误差不超过1毫米。
+    validation:
+      mode:
+        - deterministic
+        - human_review
+    review:
+      status: extracted
+
+  - id: FORMAT-PRINTING-001
+    title: 印刷质量
+    level: mandatory
+    locator: 第6.2条
+    requirements:
+      - 采用双面印刷。
+      - 页码套正，两面误差不超过2毫米。
+      - 黑色油墨达到色谱所标BL100%。
+      - 红色油墨达到色谱所标Y80%、M80%。
+      - 印品着墨实且均匀。
+      - 字面不花、不白、无断划。
+    validation:
+      mode:
+        - deterministic
+        - human_review
+    review:
+      status: extracted
+
+  - id: FORMAT-BINDING-001
+    title: 通用装订要求
+    level: mandatory
+    locator: 第6.3条
+    requirements:
+      - 公文左侧装订。
+      - 不得掉页。
+      - 两页页码之间误差不超过4毫米。
+      - 裁切后的成品尺寸允许误差为正负2毫米。
+      - 四角成90度。
+      - 无毛茬或缺损。
+    validation:
+      mode:
+        - deterministic
+        - human_review
+    review:
+      status: extracted
+
+  - id: FORMAT-BINDING-STAPLE-001
+    title: 骑马订和平订要求
+    level: conditional
+    locator: 第6.3条a项至c项
+    conditions:
+      - 使用骑马订或者平订
+    requirements:
+      - 两钉外订眼距版面上下边缘各70毫米，允许误差4毫米。
+      - 不得有坏钉、漏钉、重钉，钉脚应平伏牢固。
+      - 骑马订钉锯订在折缝线上。
+      - 平订钉锯与书脊间距离为3毫米至5毫米。
+    validation:
+      mode:
+        - deterministic
+        - human_review
+    review:
+      status: extracted
+
+  - id: FORMAT-BINDING-COVER-001
+    title: 包本装订要求
+    level: conditional
+    locator: 第6.3条
+    conditions:
+      - 使用包本装订
+    requirements:
+      - 封面、书脊、封底应与书芯吻合。
+      - 应包紧、包平、不脱落。
+    validation:
+      mode:
+        - human_review
+    review:
+      status: extracted

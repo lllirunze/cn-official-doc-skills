@@ -1,0 +1,112 @@
+schema_version: 1
+rules:
+  - id: WRITING-GENERAL-001
+    title: 政策法规与机关意图一致性
+    level: mandatory
+    requirement: 公文应当符合党的理论路线方针政策和国家法律法规，完整准确体现发文机关意图，并同现行有关公文相衔接。
+    validation:
+      mode:
+        - context_required
+        - human_review
+    source_refs:
+      - source_id: SOURCE-001
+        locator: 第十九条第一项
+    review:
+      status: extracted
+      reviewed_at: null
+
+  - id: WRITING-GENERAL-002
+    title: 实事求是与措施可行
+    level: mandatory
+    requirement: 公文应当从实际出发，分析问题实事求是，所提政策措施和办法切实可行。
+    validation:
+      mode:
+        - semantic
+        - context_required
+        - human_review
+    source_refs:
+      - source_id: SOURCE-001
+        locator: 第十九条第二项
+    review:
+      status: extracted
+      reviewed_at: null
+
+  - id: WRITING-GENERAL-003
+    title: 内容和表达质量
+    level: mandatory
+    requirement: 公文应当内容简洁、主题突出、观点鲜明、结构严谨、表述准确、文字精练。
+    validation:
+      mode:
+        - semantic
+        - human_review
+    source_refs:
+      - source_id: SOURCE-001
+        locator: 第十九条第三项
+    review:
+      status: extracted
+      reviewed_at: null
+
+  - id: WRITING-GENERAL-004
+    title: 文种与格式
+    level: mandatory
+    requirement: 公文应当文种正确、格式规范。
+    validation:
+      mode:
+        - semantic
+        - deterministic
+        - context_required
+    source_refs:
+      - source_id: SOURCE-001
+        locator: 第十九条第四项
+    review:
+      status: extracted
+      reviewed_at: null
+
+  - id: WRITING-GENERAL-005
+    title: 调研论证和意见征集
+    level: mandatory
+    requirement: 公文起草应当深入调查研究，充分进行论证，广泛听取意见。
+    validation:
+      mode:
+        - context_required
+        - human_review
+    source_refs:
+      - source_id: SOURCE-001
+        locator: 第十九条第五项
+    review:
+      status: extracted
+      reviewed_at: null
+
+  - id: WRITING-GENERAL-006
+    title: 跨地区跨部门事项征求意见
+    level: conditional
+    conditions:
+      - 公文涉及其他地区或者部门职权范围内的事项
+    requirement: 起草单位必须征求相关地区或者部门意见，力求达成一致。
+    validation:
+      mode:
+        - context_required
+        - human_review
+    source_refs:
+      - source_id: SOURCE-001
+        locator: 第十九条第六项
+    review:
+      status: extracted
+      reviewed_at: null
+
+  - id: REVIEW-GENERAL-001
+    title: 签发前审核范围
+    level: mandatory
+    requirement: 签发前审核应当覆盖行文理由和依据、政策法规一致性、机关意图、现行公文衔接、措施可行性、跨地区跨部门协商、文种格式以及人名地名时间数字引文等准确性。
+    validation:
+      mode:
+        - semantic
+        - deterministic
+        - context_required
+        - human_review
+    source_refs:
+      - source_id: SOURCE-001
+        locator: 第二十条
+    review:
+      status: extracted
+      reviewed_at: null

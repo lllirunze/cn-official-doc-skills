@@ -14,7 +14,7 @@
 - 将确定性规则交由程序验证，将语义问题交由 Agent 判断；
 - 对关键规范、判断依据和待核实内容提供可追溯说明。
 
-当前仓库仅完成项目结构和总体设计文档，核心 Skills、规范知识与验证程序尚在建设中，不应视为可用于正式业务的稳定版本。
+当前仓库已完成首批四份权威材料的首轮结构化提取；人工逐条复核、规则测试和核心 Skills 仍在建设中，因此尚不应视为可用于正式业务的稳定版本。
 
 ## 设计原则
 
@@ -44,6 +44,8 @@ cn-official-doc-skills/
 ## 文档
 
 - [项目总体设计](docs/design.md)
+- [Standards 规范知识体系设计](docs/standards-design.md)
+- [规范来源与外部材料导入说明](standards/sources/README.md)
 - [贡献指南](CONTRIBUTING.md)
 - [更新日志](CHANGELOG.md)
 

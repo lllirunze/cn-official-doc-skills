@@ -1,0 +1,116 @@
+schema_version: 1
+source_id: SOURCE-002
+rules:
+  - id: FORMAT-LANDSCAPE-TABLE-001
+    title: 横排表格
+    level: conditional
+    locator: 第8章
+    conditions:
+      - A4纸型表格横排
+    requirements:
+      - 页码位置与其他公文页码保持一致。
+      - 单页码的表头位于订口一边。
+      - 双页码的表头位于切口一边。
+    validation:
+      mode:
+        - deterministic
+    review:
+      status: extracted
+
+  - id: FORMAT-REFERENCED-STANDARDS-001
+    title: 计量单位标点符号和数字引用标准
+    level: mandatory
+    locator: 第9章
+    requirements:
+      - 计量单位符合GB 3100、GB 3101和GB 3102全部部分。
+      - 标点符号符合GB/T 15834。
+      - 数字用法符合GB/T 15835。
+    validation:
+      mode:
+        - deterministic
+        - semantic
+    review:
+      status: extracted
+
+  - id: FORMAT-LETTER-001
+    title: 信函格式
+    level: conditional
+    locator: 第10.1条
+    conditions:
+      - 使用信函格式
+    requirements:
+      - 发文机关标志使用机关全称或者规范化简称，联合行文使用主办机关标志。
+      - 标志居中，上边缘至上页边30毫米，推荐红色小标宋体字。
+      - 标志下4毫米印上粗下细红色双线，距下页边20毫米印上细下粗红色双线。
+      - 两条红色双线均长170毫米并居中。
+      - 份号、密级和保密期限、紧急程度按此顺序在第一条双线下自上而下分行顶格排列。
+      - 第一个上述要素与双线距离为3号汉字高度的八分之七。
+      - 发文字号顶格居版心右边缘，位于第一条双线下相同距离。
+      - 标题居中，与其上最后一个要素相距二行。
+      - 第二条双线上一行如有文字，与该线距离为3号汉字高度的八分之七。
+      - 首页不显示页码。
+      - 版记不含印发机关、印发日期和分隔线，位于最后一面版心内最下方。
+    validation:
+      mode:
+        - deterministic
+    review:
+      status: extracted
+
+  - id: FORMAT-ORDER-001
+    title: 命令令格式
+    level: conditional
+    locator: 第10.2条
+    conditions:
+      - 使用命令或者令格式
+    requirements:
+      - 发文机关标志由机关全称加“命令”或者“令”组成。
+      - 标志居中，上边缘至版心上边缘20毫米，推荐红色小标宋体字。
+      - 标志下空二行居中编排令号，令号下空二行编排正文。
+      - 签发人职务、签名章和成文日期按第7.3.5.3条编排。
+    validation:
+      mode:
+        - deterministic
+    review:
+      status: extracted
+
+  - id: FORMAT-MINUTES-001
+    title: 纪要格式
+    level: conditional
+    locator: 第10.3条
+    conditions:
+      - 使用纪要格式
+    requirements:
+      - 纪要标志由“×××××纪要”组成。
+      - 标志居中，上边缘至版心上边缘35毫米，推荐红色小标宋体字。
+      - 出席人员名单一般使用3号黑体字，在正文或者附件说明下空一行左空二字编排“出席”和全角冒号。
+      - 出席人员单位、姓名使用3号仿宋体字，回行与冒号后的首字对齐。
+      - 请假和列席人员名单依次另起一行，分别将“出席”改为“请假”或者“列席”，其余编排相同。
+      - 纪要格式可以根据实际制定。
+    validation:
+      mode:
+        - deterministic
+        - context_required
+    review:
+      status: extracted
+
+  - id: FORMAT-PATTERNS-001
+    title: 公文式样
+    level: mandatory
+    locator: 第11章、图1至图12
+    requirements:
+      - 图1用于核验A4型公文用纸页边及版心尺寸。
+      - 图2用于核验公文首页版式。
+      - 图3和图4用于核验联合行文公文首页版式。
+      - 图5和图6用于核验公文末页版式。
+      - 图7和图8用于核验联合行文公文末页版式。
+      - 图9用于核验附件说明页版式。
+      - 图10用于核验带附件公文末页版式。
+      - 图11用于核验信函格式首页版式。
+      - 图12用于核验命令令格式首页版式。
+    validation:
+      mode:
+        - deterministic
+        - human_review
+      visual_source_required: true
+    review:
+      status: extracted
