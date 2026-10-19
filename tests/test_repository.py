@@ -25,6 +25,10 @@ class RepositoryValidationTests(unittest.TestCase):
     def test_all_four_sources_pass_the_human_review_gate(self) -> None:
         VALIDATOR.validate_source_gate()
 
+    def test_all_rules_and_sources_pass_the_release_gate(self) -> None:
+        rules = VALIDATOR.validate_rule_catalog()
+        VALIDATOR.validate_release_gate(rules)
+
     def test_plugin_contains_exactly_the_v01_skills(self) -> None:
         VALIDATOR.validate_plugin_package()
 

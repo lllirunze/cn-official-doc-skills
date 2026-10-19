@@ -33,7 +33,7 @@ rules:
         - deterministic
         - semantic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-ARABIC-ID-001
@@ -47,7 +47,7 @@ rules:
         - deterministic
         - semantic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-ARABIC-FIXED-001
@@ -61,7 +61,7 @@ rules:
         - semantic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-CHINESE-CALENDAR-001
@@ -75,7 +75,7 @@ rules:
         - deterministic
         - semantic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-CHINESE-APPROX-001
@@ -90,7 +90,7 @@ rules:
         - deterministic
         - semantic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-CHINESE-FIXED-001
@@ -104,7 +104,7 @@ rules:
         - semantic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-CHOICE-001
@@ -123,7 +123,7 @@ rules:
         - semantic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-GROUPING-001
@@ -142,7 +142,7 @@ rules:
         - deterministic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-DECIMAL-001
@@ -156,7 +156,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-RANGE-001
@@ -172,7 +172,7 @@ rules:
         - deterministic
         - semantic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-DATE-001
@@ -190,7 +190,7 @@ rules:
         - deterministic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-TIME-001
@@ -205,7 +205,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-NAMED-DATE-ARABIC-001
@@ -220,7 +220,7 @@ rules:
         - deterministic
         - semantic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-TYPEFACE-001
@@ -233,7 +233,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-LINEBREAK-001
@@ -246,7 +246,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-VERTICAL-001
@@ -263,7 +263,7 @@ rules:
         - deterministic
         - human_review
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-APPROX-PUNCT-001
@@ -277,7 +277,7 @@ rules:
         - deterministic
         - semantic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-YEAR-CHINESE-001
@@ -290,7 +290,7 @@ rules:
       mode:
         - semantic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-NAMED-DATE-CHINESE-001
@@ -305,7 +305,7 @@ rules:
         - deterministic
         - semantic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-UPPERCASE-001
@@ -320,7 +320,7 @@ rules:
         - deterministic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-ZERO-001
@@ -335,7 +335,7 @@ rules:
         - deterministic
         - semantic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: NUMBER-MIXED-001
@@ -350,5 +350,5 @@ rules:
         - deterministic
         - semantic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"

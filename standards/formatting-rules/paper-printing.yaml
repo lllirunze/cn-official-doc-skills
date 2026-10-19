@@ -32,7 +32,7 @@ rules:
         - deterministic
         - human_review
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-PAPER-SIZE-001
@@ -46,7 +46,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-PAGE-MARGIN-001
@@ -61,7 +61,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-DEFAULT-FONT-001
@@ -76,7 +76,7 @@ rules:
         - deterministic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-LINES-CHARS-001
@@ -93,7 +93,7 @@ rules:
         - deterministic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-TEXT-COLOR-001
@@ -107,7 +107,7 @@ rules:
         - deterministic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-PLATE-001
@@ -125,7 +125,7 @@ rules:
         - deterministic
         - human_review
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-PRINTING-001
@@ -144,7 +144,7 @@ rules:
         - deterministic
         - human_review
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-BINDING-001
@@ -163,7 +163,7 @@ rules:
         - deterministic
         - human_review
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-BINDING-STAPLE-001
@@ -182,7 +182,7 @@ rules:
         - deterministic
         - human_review
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-BINDING-COVER-001
@@ -198,5 +198,5 @@ rules:
       mode:
         - human_review
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"

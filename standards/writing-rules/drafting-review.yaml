@@ -12,7 +12,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十九条第一项
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: WRITING-GENERAL-002
@@ -28,7 +28,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十九条第二项
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: WRITING-GENERAL-003
@@ -43,7 +43,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十九条第三项
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: WRITING-GENERAL-004
@@ -59,7 +59,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十九条第四项
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: WRITING-GENERAL-005
@@ -74,7 +74,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十九条第五项
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: WRITING-GENERAL-006
@@ -91,7 +91,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十九条第六项
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: REVIEW-GENERAL-001
@@ -108,5 +108,5 @@ rules:
       - source_id: SOURCE-001
         locator: 第二十条
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"

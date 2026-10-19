@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import tomllib
 from collections import Counter
 from pathlib import Path
 from typing import Any, Iterable
@@ -180,6 +181,36 @@ def validate_source_gate() -> None:
             raise AssertionError(f"{source['source_id']} 尚未人工签核")
 
 
+def validate_release_gate(rules: dict[str, dict[str, Any]]) -> None:
+    inactive = sorted(
+        rule_id
+        for rule_id, entry in rules.items()
+        if entry["rule"]["review"].get("status") != "active"
+    )
+    if inactive:
+        raise AssertionError(f"正式发布仍有非active规则：{inactive}")
+
+    coverage = load_yaml(ROOT / "standards" / "sources" / "coverage.yaml")
+    unavailable = [
+        source["source_id"]
+        for source in coverage["sources"]
+        if source.get("usable") is not True
+    ]
+    if unavailable:
+        raise AssertionError(f"正式发布仍有不可用来源：{unavailable}")
+
+    project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
+    expected_version = project["project"]["version"]
+    manifests = [
+        ROOT / "plugin.json",
+        ROOT / ".codex-plugin" / "plugin.json",
+    ]
+    for path in manifests:
+        manifest = json.loads(path.read_text(encoding="utf-8"))
+        if manifest.get("version") != expected_version:
+            raise AssertionError(f"{path.relative_to(ROOT)} 与项目版本不一致")
+
+
 def validate_plugin_package() -> None:
     manifest_path = ROOT / ".codex-plugin" / "plugin.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -200,6 +231,7 @@ def validate_all() -> None:
     rules = validate_rule_catalog()
     validate_behavior_coverage(rules)
     validate_source_gate()
+    validate_release_gate(rules)
     validate_plugin_package()
 
 

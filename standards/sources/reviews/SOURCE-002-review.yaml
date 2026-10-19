@@ -13,7 +13,8 @@ result: passed
 human_approval: approved
 human_approved_at: "2026-10-17"
 human_approved_by: project_maintainer_user
-usable: false
+usable: true
+activated_at: "2026-10-19"
 
 checks:
   source_identity:

@@ -7,43 +7,43 @@ rules:
     title: 制定目的
     level: mandatory
     requirement: 本条例用于适应党政机关工作需要，推进公文处理科学化、制度化、规范化。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-002
     locator: 第二条
     title: 适用范围
     level: mandatory
     requirement: 本条例适用于各级党政机关公文处理工作。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-003
     locator: 第三条
     title: 党政机关公文定义和作用
     level: mandatory
     requirement: 党政机关公文是实施领导、履行职能、处理公务并具有特定效力和规范体式的文书，是传达贯彻党和国家方针政策、公布法规规章、指导布置商洽工作、请示答复问题及报告通报交流情况等的重要工具。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-004
     locator: 第四条
     title: 公文处理工作范围
     level: mandatory
     requirement: 公文处理包括公文拟制、办理、管理等相互关联、衔接有序的工作。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-005
     locator: 第五条
     title: 公文处理原则
     level: mandatory
     requirements: [实事求是, 准确规范, 精简高效, 安全保密]
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-006
     locator: 第六条
     title: 组织领导和人员保障
     level: mandatory
     requirement: 各级党政机关应重视公文处理，加强组织领导和队伍建设，设立文秘部门或指定专人负责。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-007
     locator: 第七条
     title: 主管部门职责
     level: mandatory
     requirement: 各级党政机关办公厅（室）主管本机关公文处理，并指导、督促检查下级机关相关工作。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-008
     locator: 第八条第一项至第十五项
     title: 十五种主要公文种类及适用范围
@@ -64,7 +64,7 @@ rules:
       议案: 各级人民政府依法向同级人大或其常委会提请审议事项
       函: 不相隶属机关间商洽、询问答复、请求批准和答复审批事项
       纪要: 记载会议主要情况和议定事项
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-009
     locator: 第九条第一项至第十八项
     title: 公文组成要素
@@ -88,13 +88,13 @@ rules:
       抄送机关: 使用需执行或知晓内容的其他机关全称、规范简称或同类型统称
       印发机关和印发日期: 标明送印机关和送印日期
       页码: 公文页数顺序号
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-010
     locator: 第十条
     title: 公文版式标准
     level: mandatory
     requirement: 公文版式按《党政机关公文格式》国家标准执行。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-011
     locator: 第十一条
     title: 字符、计量单位和标点规范
@@ -102,25 +102,25 @@ rules:
     requirements:
       - 汉字、数字、外文字符、计量单位和标点符号按有关国家标准和规定执行。
       - 民族自治地方公文可以并用汉字和当地通用少数民族文字。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-012
     locator: 第十二条
     title: 公文用纸幅面
     level: mandatory
     requirements: [一般公文用纸采用国际标准A4型, 特殊形式公文用纸按实际需要确定]
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-013
     locator: 第十三条
     title: 行文必要性和实效性
     level: mandatory
     requirement: 行文应确有必要，讲求实效，注重针对性和可操作性。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-014
     locator: 第十四条
     title: 行文关系和越级限制
     level: mandatory
     requirements: [按隶属关系和职权范围确定行文关系, 一般不得越级行文, 特殊情况越级时同时抄送被越过机关]
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-015
     locator: 第十五条第一项至第六项
     title: 向上级机关行文规则
@@ -132,7 +132,7 @@ rules:
       - 请示一文一事，不得在报告等非请示公文中夹带请示。
       - 除上级机关负责人直接交办事项外，不以本机关名义向上级机关负责人报文，也不以本机关负责人名义向上级机关报文。
       - 双重领导机关向一个上级行文，必要时抄送另一个上级。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-016
     locator: 第十六条第一项至第五项
     title: 向下级机关行文规则
@@ -143,7 +143,7 @@ rules:
       - 党委政府部门可在职权范围内向下级党委政府相关部门行文。
       - 多部门职权事项未协商一致不得向下行文；擅自行文由上级责令纠正或撤销。
       - 上级向受双重领导的下级行文，必要时抄送其另一个上级。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-017
     locator: 第十七条
     title: 联合行文和部门行文权限
@@ -152,13 +152,13 @@ rules:
       - 同级党政机关及其与其他同级机关必要时可以联合行文，属于党委政府各自职权的工作不得联合行文。
       - 党委政府部门可依据职权相互行文。
       - 部门内设机构除办公厅（室）外不得对外正式行文。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-018
     locator: 第十八条
     title: 公文拟制程序
     level: mandatory
     requirement: 公文拟制包括起草、审核和签发。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-019
     locator: 第十九条第一项至第七项
     title: 公文起草要求
@@ -171,7 +171,7 @@ rules:
       - 深入调查研究、充分论证、广泛听取意见。
       - 涉及其他地区或部门职权的，必须征求意见并力求一致。
       - 机关负责人主持、指导重要公文起草。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-020
     locator: 第二十条第一项至第五项及第二款
     title: 签发前审核
@@ -183,13 +183,13 @@ rules:
       - 审核跨地区部门事项是否充分协商并一致。
       - 审核文种格式，以及人名地名时间数字段落引文和文字、数字、计量单位、标点规范性。
       - 审核其他起草要求。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-021
     locator: 第二十一条
     title: 审核后的退回和修改
     level: mandatory
     requirement: 不宜发文的退回起草单位并说明理由；可发但需研究修改的，由起草单位修改后重新报送。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-022
     locator: 第二十二条
     title: 审批签发和会签
@@ -199,13 +199,13 @@ rules:
       - 办公厅（室）按授权制发的公文由受权机关主要负责人或按规定签发。
       - 签发人签署意见、姓名和完整日期；圈阅或签名视为同意。
       - 联合发文由所有联署机关负责人会签。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-023
     locator: 第二十三条
     title: 公文办理范围
     level: mandatory
     requirement: 公文办理包括收文办理、发文办理和整理归档。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-024
     locator: 第二十四条第一项至第七项
     title: 收文办理程序
@@ -218,7 +218,7 @@ rules:
       传阅: 按批示和需要及时传阅，掌握去向，防止漏传误传延误
       催办: 掌握进展并督促按期办结；紧急或重要公文专人催办
       答复: 及时答复来文单位并按需告知相关单位
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-025
     locator: 第二十五条第一项至第四项
     title: 发文办理程序
@@ -228,13 +228,13 @@ rules:
       登记: 确定发文字号、分送范围、印制份数并详细记载
       印制: 确保质量时效；涉密公文在符合保密要求场所印制
       核发: 检查文字、格式和印刷质量后分发
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-026
     locator: 第二十六条
     title: 涉密公文传递和传输
     level: mandatory
     requirement: 涉密公文通过规定的机要渠道或机要人员传递，通过密码电报或符合国家保密规定的计算机信息系统传输。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-027
     locator: 第二十七条
     title: 公文归档
@@ -243,13 +243,13 @@ rules:
       - 需归档公文材料按档案法规和机关规定及时收集齐全、整理归档。
       - 联合办理公文原件由主办机关归档，相关机关保存复制件。
       - 负责人兼职履职形成的公文由兼职机关归档。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-028
     locator: 第二十八条
     title: 建立公文管理制度
     level: mandatory
     requirement: 各级党政机关建立健全公文管理制度，确保严格规范并发挥公文效用。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-029
     locator: 第二十九条
     title: 公文统一管理和保密设施
@@ -257,7 +257,7 @@ rules:
     requirements:
       - 公文由文秘部门或专人统一管理。
       - 设党委（党组）的县级以上单位建立机要保密室和机要阅文室，按规定配备人员和设施设备。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-030
     locator: 第三十条
     title: 密级确定、管理、变更和解除
@@ -266,7 +266,7 @@ rules:
       - 确定密级前按拟定密级先行采取保密措施，确定后严格按所定密级管理。
       - 绝密级公文由专人管理。
       - 密级变更或解除由原定密机关或其上级机关决定。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-031
     locator: 第三十一条
     title: 传达范围和公开发布
@@ -275,7 +275,7 @@ rules:
       - 印发传达范围按发文机关要求执行，变更须经发文机关批准。
       - 涉密公文公开发布前履行解密程序；时间、形式和渠道由发文机关确定。
       - 经批准公开发布的公文与正式印发公文具有同等效力。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-032
     locator: 第三十二条
     title: 涉密公文复制、翻印和汇编
@@ -285,7 +285,7 @@ rules:
       - 绝密公文一般不得复制汇编；确需时经发文机关或其上级批准。
       - 复制汇编件视同原件管理；复制件盖复制机关戳记，翻印件注明机关和日期。
       - 汇编本按所编公文最高密级标注。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-033
     locator: 第三十三条
     title: 公文撤销和废止
@@ -293,13 +293,13 @@ rules:
     requirements:
       - 撤销或废止由发文机关、上级机关或权力机关依职权和法规决定。
       - 撤销视为自始无效，废止视为自废止日起失效。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-034
     locator: 第三十四条
     title: 涉密公文清退和销毁
     level: mandatory
     requirement: 涉密公文按发文机关要求和有关规定清退或销毁。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-035
     locator: 第三十五条
     title: 无保存价值公文销毁
@@ -308,7 +308,7 @@ rules:
       - 不具归档保存价值的公文经批准可销毁。
       - 销毁涉密公文严格履行审批登记并确保不丢失、不漏销。
       - 个人不得私自销毁或留存涉密公文。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-036
     locator: 第三十六条
     title: 机构变动和人员离岗时的公文管理
@@ -316,37 +316,37 @@ rules:
     requirements:
       - 机关合并时全部公文随之合并管理；撤销时需归档公文整理后移交档案部门。
       - 人员离岗离职时，所在机关督促其移交、清退暂存借用公文。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-037
     locator: 第三十七条
     title: 发文立户
     level: mandatory
     requirement: 新设机关向本级党委政府办公厅（室）申请发文立户，经审查符合条件列为发文单位；机关合并撤销时相应调整。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-038
     locator: 第三十八条
     title: 电子公文
     level: mandatory
     requirement: 党政机关公文包括电子公文，其具体处理办法另行制定。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-039
     locator: 第三十九条
     title: 法规规章和外事公文
     level: mandatory
     requirement: 法规规章方面公文按有关规定处理，外事方面公文按外事主管部门规定处理。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-040
     locator: 第四十条
     title: 其他机关单位参照执行
     level: conditional
     requirement: 其他机关和单位的公文处理工作可以参照本条例执行。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-041
     locator: 第四十一条
     title: 解释机关
     level: mandatory
     requirement: 本条例由中共中央办公厅、国务院办公厅负责解释。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}
   - id: REG-ARTICLE-042
     locator: 第四十二条
     title: 施行日期和旧规停止执行
@@ -354,4 +354,4 @@ rules:
     requirements:
       - 本条例自2012年7月1日起施行。
       - 1996年《中国共产党机关公文处理条例》和2000年《国家行政机关公文处理办法》停止执行。
-    review: {status: human_approved, source_checked_at: "2026-10-17"}
+    review: {status: active, source_checked_at: "2026-10-17"}

@@ -11,7 +11,7 @@ description: 根据用户提供的真实事实、机关关系和写作目的，�
 
 1. 起草前读取相对于本 Skill 目录的 `../../standards/sources/coverage.yaml`。
 2. 正式成稿只能把 `active` 规则作为确定性规范依据。
-3. 开发测试时可以使用 `source_checked` 或 `human_approved` 规则，但必须声明其尚未转为 `active`，不得把结果表述为正式规范审核结论。
+3. `source_checked` 或 `human_approved` 规则只能用于开发测试，必须声明其尚未转为 `active`，不得把结果表述为正式规范审核结论。
 4. 不使用 `extracted`、来源不明或已失效规则。
 5. 不凭模型常识猜测公务员材料规范；现有规范不足时，列出缺少的权威文件并请求用户提供。
 

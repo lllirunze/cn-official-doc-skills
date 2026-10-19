@@ -15,7 +15,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十三条
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: ROUTING-GENERAL-002
@@ -38,7 +38,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十四条
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: ROUTING-GENERAL-003
@@ -59,7 +59,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十四条
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: ROUTING-UPWARD-001
@@ -80,7 +80,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十五条第一项
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: ROUTING-UPWARD-002
@@ -102,7 +102,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十五条第二项
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: ROUTING-UPWARD-003
@@ -122,7 +122,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十五条第五项
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: ROUTING-UPWARD-004
@@ -140,7 +140,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十五条第六项
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: ROUTING-DOWNWARD-001
@@ -157,7 +157,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十六条第一项
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: ROUTING-DOWNWARD-002
@@ -175,7 +175,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十六条第二项
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: ROUTING-DOWNWARD-003
@@ -193,7 +193,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十六条第三项
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: ROUTING-DOWNWARD-004
@@ -213,7 +213,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十六条第四项
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: ROUTING-JOINT-001
@@ -230,7 +230,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第十七条第一款、第二款
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"
 
   - id: ROUTING-AUTHORITY-001
@@ -246,5 +246,5 @@ rules:
       - source_id: SOURCE-001
         locator: 第十七条第三款
     review:
-      status: human_approved
+      status: active
       reviewed_at: "2026-10-17"

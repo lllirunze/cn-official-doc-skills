@@ -9,7 +9,8 @@ result: passed_with_corrections
 human_approval: approved
 human_approved_at: "2026-10-17"
 human_approved_by: project_maintainer_user
-usable: false
+usable: true
+activated_at: "2026-10-19"
 
 checks:
   source_identity:
@@ -26,7 +27,7 @@ checks:
     evidence: 修正第三条公文作用摘要和第十五条第五项交办主体限定后，未发现超出或改变原文含义的记录。
   classification:
     status: passed
-    evidence: 条件性参照执行规则与普遍要求已经区分；全部记录仍保持未启用状态。
+    evidence: 条件性参照执行规则与普遍要求已经区分；规则通过发布门禁后已正式启用。
 
 article_results:
   - articles: 第一条至第七条

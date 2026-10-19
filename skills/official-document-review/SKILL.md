@@ -11,7 +11,7 @@ description: 审核中文党政机关公文和机关文稿的文种、行文关�
 
 1. 优先读取相对于本 Skill 目录的 `../../standards/sources/coverage.yaml`。
 2. 正式审核只能将 `active` 规则作为确定性规范结论。
-3. 开发测试时可以使用 `source_checked` 或 `human_approved` 规则，但必须在结果开头声明“规则尚未转为 active，不得替代正式审核”。
+3. `source_checked` 或 `human_approved` 规则只能用于开发测试，必须在结果开头声明“规则尚未转为 active，不得替代正式审核”。
 4. `extracted`、来源不明或已失效规则不得作为结论依据。
 5. 不根据模型常识补造公文规范。缺少适用规范时，指出缺口并请求用户提供权威材料。
 

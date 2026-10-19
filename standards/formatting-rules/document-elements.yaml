@@ -13,7 +13,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第九条
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
       reviewed_at: null
 
@@ -29,7 +29,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第九条第七项
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
       reviewed_at: null
 
@@ -47,7 +47,7 @@ rules:
       - source_id: SOURCE-001
         locator: 第九条第八项
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
       reviewed_at: null
 
@@ -65,7 +65,7 @@ rules:
       - source_id: SOURCE-002
         locator: 全文
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
       reviewed_at: null
 
@@ -85,7 +85,7 @@ rules:
       - source_id: SOURCE-004
         locator: 全文
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
       reviewed_at: null
 
@@ -101,6 +101,6 @@ rules:
       - source_id: SOURCE-001
         locator: 第十二条
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
       reviewed_at: null

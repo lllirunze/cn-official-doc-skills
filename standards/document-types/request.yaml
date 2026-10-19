@@ -27,7 +27,7 @@ document_type:
         - source_id: SOURCE-001
           locator: 第八条第十一项
       review:
-        status: human_approved
+        status: active
         reviewed_at: "2026-10-17"
 
     - id: ROUTING-REQUEST-001
@@ -43,7 +43,7 @@ document_type:
         - source_id: SOURCE-001
           locator: 第十五条第四项
       review:
-        status: human_approved
+        status: active
         reviewed_at: "2026-10-17"
 
     - id: ROUTING-REQUEST-002
@@ -65,5 +65,5 @@ document_type:
         - source_id: SOURCE-001
           locator: 第十五条第三项
       review:
-        status: human_approved
+        status: active
         reviewed_at: "2026-10-17"

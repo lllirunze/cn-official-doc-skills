@@ -4,6 +4,8 @@
 
 ## [未发布]
 
+## [0.1.0] - 2026-10-19
+
 ### 新增
 
 - 建立项目初始目录结构；
@@ -22,4 +24,5 @@
 - 增加 Codex 插件清单、GitHub 仓库市场清单和安装使用文档，使两个核心 Skill 可作为一个完整插件安装。
 - 增加规则库、行为覆盖、来源门禁和插件结构的可重复验证，并在 GitHub Actions 中覆盖 Python 3.11至3.13。
 
-> 发布仓库地址确定后，再补充版本比较链接。
+[未发布]: https://github.com/lllirunze/cn-official-doc-skills/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/lllirunze/cn-official-doc-skills/releases/tag/v0.1.0

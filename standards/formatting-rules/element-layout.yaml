@@ -15,7 +15,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-COPY-NUMBER-001
@@ -31,7 +31,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-CLASSIFICATION-001
@@ -48,7 +48,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-URGENCY-001
@@ -65,7 +65,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-ORG-MARK-001
@@ -86,7 +86,7 @@ rules:
         - context_required
         - human_review
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-DOC-NUMBER-001
@@ -104,7 +104,7 @@ rules:
         - deterministic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-SIGNER-001
@@ -124,7 +124,7 @@ rules:
         - deterministic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-HEADER-LINE-001
@@ -137,7 +137,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-TITLE-LAYOUT-001
@@ -155,7 +155,7 @@ rules:
         - deterministic
         - human_review
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-ADDRESSEE-LAYOUT-001
@@ -173,7 +173,7 @@ rules:
         - deterministic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-BODY-001
@@ -191,7 +191,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-ATTACHMENT-NOTE-001
@@ -210,7 +210,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-SEAL-001
@@ -233,7 +233,7 @@ rules:
         - deterministic
         - human_review
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-NO-SEAL-001
@@ -252,7 +252,7 @@ rules:
         - deterministic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-SIGNATURE-SEAL-001
@@ -274,7 +274,7 @@ rules:
         - deterministic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-DATE-001
@@ -289,7 +289,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-SEAL-SPACE-001
@@ -305,7 +305,7 @@ rules:
         - deterministic
         - human_review
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-NOTE-001
@@ -320,7 +320,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-ATTACHMENT-001
@@ -341,7 +341,7 @@ rules:
         - deterministic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-IMPRINT-LINES-001
@@ -358,7 +358,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-CC-001
@@ -377,7 +377,7 @@ rules:
         - deterministic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-PRINT-OFFICE-DATE-001
@@ -395,7 +395,7 @@ rules:
       mode:
         - deterministic
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
 
   - id: FORMAT-PAGE-NUMBER-001
@@ -414,5 +414,5 @@ rules:
         - deterministic
         - context_required
     review:
-      status: human_approved
+      status: active
       source_checked_at: "2026-10-17"
