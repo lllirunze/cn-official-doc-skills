@@ -1,0 +1,80 @@
+schema_version: 1
+source_id: SOURCE-005
+scope:
+  jurisdiction: 四川省广安市
+  organizations: 广安市人民政府及《广安市人民政府工作规则》规定的报文单位
+  warning: 以下规则仅在确认适用该地方制度时使用，不得推广为全国通用要求。
+rules:
+  - id: LOCAL-GA-ROUTING-001
+    title: 广安市报送市政府公文的主体和渠道限制
+    level: local_mandatory
+    requirement: 除规则列明的特殊事项外，公文统一送市政府办公室按程序处理，一般不得直接送市政府领导个人或者相关秘书科室，不得多头报送；议事协调机构及其办公室、部门管理机构和地方政府工作部门不得向市政府报送公文。
+    validation:
+      mode: [context_required, human_review]
+      required_context: [是否适用广安市工作规则, 报文单位性质, 报送对象, 是否属于列明例外]
+    source_refs:
+      - source_id: SOURCE-005
+        locator: 第九章第四十七条、第四十八条
+    review: {status: source_checked, source_checked_at: "2026-10-20"}
+
+  - id: LOCAL-GA-CONSULT-001
+    title: 广安市请示性公文跨部门地方协商
+    level: local_mandatory
+    conditions: [报送广安市政府的请示性公文涉及其他部门或者地方职权]
+    requirement: 主办单位应征求相关部门、地方意见并力求一致；仍有分歧时列明各方理据、提出办理建议并会签后报市政府决定。除主办单位另有时限要求外，一般5个工作日内回复；特殊情况应沟通商定时限，逾期不回复视为无不同意见。
+    validation:
+      mode: [context_required, human_review]
+      required_context: [是否适用广安市工作规则, 涉及职权, 征求意见时间, 回复或分歧情况, 主办单位另定时限]
+    source_refs:
+      - source_id: SOURCE-005
+        locator: 第九章第四十九条
+    review: {status: source_checked, source_checked_at: "2026-10-20"}
+
+  - id: LOCAL-GA-REVIEW-001
+    title: 广安市报送市政府公文审核与呈批
+    level: local_mandatory
+    conditions: [向广安市政府报送公文]
+    requirement: 市政府办公室审核行文规则；不符合要求的退文，符合要求的提出拟办意见后按领导分工呈批，重大事项及规定文件及时报市长阅批。
+    validation:
+      mode: [context_required, human_review]
+    source_refs:
+      - source_id: SOURCE-005
+        locator: 第九章第五十条
+    review: {status: source_checked, source_checked_at: "2026-10-20"}
+
+  - id: LOCAL-GA-SIGN-001
+    title: 广安市政府公文签发权限
+    level: local_mandatory
+    conditions: [以广安市政府或者市政府授权市政府办公室名义发文]
+    requirement: 报省政府和市委的文件、议案、规章、决定、命令、人事任免以及商请支持协调解决重要事项等由市长签署或签发；其他市政府名义文件由分管领导签发，必要时报市长；事务性文件可由秘书长签发。
+    validation:
+      mode: [context_required, human_review]
+      required_context: [发文名义, 文件事项, 拟签发人, 是否属于重要事项]
+    source_refs:
+      - source_id: SOURCE-005
+        locator: 第九章第五十一条
+    review: {status: source_checked, source_checked_at: "2026-10-20"}
+
+  - id: LOCAL-GA-REDUCE-001
+    title: 广安市精简文件简报
+    level: local_mandatory
+    requirement: 已有法律法规或者现行文件明确规定且仍适用的事项不重复发文；内容相近的统筹归并；无实质内容的文件不发；已公开上级文件不再翻印转发；部门职权事务由部门自行或联合发文。
+    validation:
+      mode: [semantic, context_required, human_review]
+      required_context: [是否适用广安市工作规则, 现行文件覆盖情况, 事项职权, 发文实质内容]
+    source_refs:
+      - source_id: SOURCE-005
+        locator: 第九章第五十二条
+    review: {status: source_checked, source_checked_at: "2026-10-20"}
+
+  - id: LOCAL-GA-DEADLINE-001
+    title: 广安市公文限时办理和对应发文期限
+    level: local_mandatory
+    requirement: 公文办理实行限时办结，紧急公文急事急办、特事特办；制发贯彻落实省政府或省政府办公厅非规划类、非法规性文件的对应发文，原则上不超过6个月。
+    validation:
+      mode: [context_required, human_review]
+      required_context: [是否适用广安市工作规则, 公文紧急程度, 上级文件性质, 上级文件发布日期, 对应发文日期]
+    source_refs:
+      - source_id: SOURCE-005
+        locator: 第九章第五十三条
+    review: {status: source_checked, source_checked_at: "2026-10-20"}

@@ -58,6 +58,14 @@ python -m pytest
 python scripts/validate_repository.py
 ```
 
+候选变更通过开发门禁后，正式发布前还必须运行：
+
+```bash
+python scripts/validate_repository.py --release
+```
+
+完整步骤见 [版本与发布流程](docs/releasing.md)。
+
 未安装 `pytest` 时，可运行 `python -m unittest discover -s tests`。
 
 ## 文档与命名

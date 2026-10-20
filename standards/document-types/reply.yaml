@@ -1,0 +1,135 @@
+schema_version: 1
+document_type:
+  id: reply
+  name: 批复
+  category: statutory_document
+  source_definition:
+    source_id: SOURCE-001
+    locator: 第八条第十二项
+  applicable_scenarios:
+    - 答复下级机关请示事项
+  exclusions:
+    - id: EXCLUSION-REPLY-001
+      description: 批复以存在下级机关请示事项为前提；不相隶属机关之间答复审批事项应结合实际关系判断是否使用函。
+      basis:
+        source_id: SOURCE-001
+        locator: 第八条第十二项、第十四项
+  rules:
+    - id: DOC-TYPE-REPLY-001
+      title: 批复文种适用范围
+      level: mandatory
+      requirement: 批复应当用于答复下级机关请示事项。
+      validation:
+        mode:
+          - semantic
+          - context_required
+        required_context:
+          - 来文机关
+          - 请示标题和发文字号
+          - 请示事项
+          - 上下级关系
+          - 答复意见
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第八条第十二项
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-REPLY-002
+      title: 批复必须具有请示来文和上下级关系
+      level: mandatory
+      requirement: 使用批复前必须确认存在下级机关提出的请示事项，并核实来文机关与答复机关的上下级关系；缺少原请示或者机关关系不明时，不得武断认定批复适用。
+      validation:
+        mode:
+          - context_required
+          - human_review
+        required_context:
+          - 原请示
+          - 来文机关
+          - 答复机关
+          - 组织隶属关系
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第八条第十二项、第十四条
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-REPLY-003
+      title: 批复内容对应原请示事项
+      level: mandatory
+      requirement: 批复应当针对原请示事项作出明确答复；不得遗漏核心请求、答非所请，或者把未经请示和决定的新事项写成既定答复。
+      validation:
+        mode:
+          - semantic
+          - context_required
+        required_context:
+          - 原请示核心请求
+          - 拟答复意见
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第八条第十二项、第十九条第三项
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-REPLY-004
+      title: 批复意见必须经过有权机关确认
+      level: mandatory
+      requirement: 同意、不同意、原则同意、附条件同意以及其他实质答复必须来自有权机关已经确认的意见，并履行审核签发程序；不得由起草者自行决定。
+      validation:
+        mode:
+          - context_required
+          - human_review
+        required_context:
+          - 事项审批职权
+          - 已确认答复意见
+          - 审核签发状态
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第十九条第一项、第二十条、第二十二条
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-REPLY-005
+      title: 涉及其他地区部门职权时先行协商
+      level: conditional
+      conditions:
+        - 批复事项涉及其他地区或者部门职权
+      requirement: 起草批复前必须征求相关地区或者部门意见并力求达成一致；尚未协商一致时，不得把单方意见写成确定答复。
+      validation:
+        mode:
+          - context_required
+          - human_review
+        required_context:
+          - 涉及的地区或者部门
+          - 职权划分
+          - 征求意见和协商结果
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第十九条第六项、第二十条第四项
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-REPLY-006
+      title: 及时答复请示来文
+      level: mandatory
+      requirement: 经办理形成答复意见后，应当及时答复来文单位，并根据需要告知相关单位；具体办理时限依适用制度和事项要求核实，不得凭空设定统一期限。
+      validation:
+        mode:
+          - context_required
+          - human_review
+        required_context:
+          - 来文时间
+          - 办理进展
+          - 适用办理时限
+          - 是否需要告知相关单位
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第二十四条第七项
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"

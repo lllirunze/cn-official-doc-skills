@@ -39,3 +39,11 @@ sources:
     review_status: human_approved
     usable: true
     remaining: null
+
+  - source_id: SOURCE-005
+    expected_scope: 第九章第四十七条至第五十三条公文制度
+    machine_readable: true
+    extraction_status: complete
+    review_status: source_checked
+    usable: false
+    remaining: 项目维护者核实现行状态、适用范围和候选规则后人工签核

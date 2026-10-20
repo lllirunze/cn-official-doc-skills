@@ -1,6 +1,6 @@
 ---
 name: official-document-drafting
-description: 根据用户提供的真实事实、机关关系和写作目的，起草、修改或优化中文通知、报告、请示及相关机关文稿。适用于规范驱动的中文成稿；不负责虚构政策、数据、文号、决定或工作成果。
+description: 根据用户提供的真实事实、机关关系和写作目的，起草、修改或优化中文通知、通报、报告、请示、批复、函及相关机关文稿。适用于规范驱动的中文成稿；不负责虚构政策、数据、文号、决定或工作成果。
 ---
 
 # 中文机关文稿起草
@@ -30,13 +30,16 @@ description: 根据用户提供的真实事实、机关关系和写作目的，�
 
 ## 起草方式
 
-按 [起草工作流](references/drafting-workflow.md) 执行。选择通知、报告或请示时读取 [文种选择](references/document-types.md)。事实和占位符处理遵守 [事实安全](references/fact-safety.md)。
+按 [起草工作流](references/drafting-workflow.md) 执行。选择通知、通报、报告、请示、批复或函时读取 [文种选择](references/document-types.md)。事实和占位符处理遵守 [事实安全](references/fact-safety.md)。
 
 需要成稿骨架时可使用：
 
 - [通知模板](assets/notice-template.md)
+- [通报模板](assets/circular-template.md)
 - [报告模板](assets/report-template.md)
 - [请示模板](assets/request-template.md)
+- [批复模板](assets/reply-template.md)
+- [函模板](assets/letter-template.md)
 
 模板只提供结构，不得覆盖适用规则或用户真实业务要求。
 
@@ -46,6 +49,9 @@ description: 根据用户提供的真实事实、机关关系和写作目的，�
 - 内容与用户提供的事实一致，不新增未经确认的政策、文号、数据、资金、决定、成果或领导意见。
 - 文种、行文方向、主送机关和请求方式相互一致。
 - 请示一文一事，报告不夹带请示事项。
+- 通报中的事实、评价、表彰、批评和处理意见均有已确认依据，不代替机关作出责任认定。
+- 批复对应真实请示和已确认答复，不擅自同意、否决或者附加新决定。
+- 函只用于符合不相隶属机关关系的法定场景，不以函规避请示、批复等上下级行文规则。
 - 结构清晰、主题突出、表述准确、文字精练，措施具有可操作性。
 - 不把一般工作材料强行套成法定公文。
 

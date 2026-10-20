@@ -27,6 +27,8 @@ codex plugin add cn-official-doc-skills@cn-official-doc-skills
 
 当前仓库已完成首批四份权威材料的结构化提取、Agent逐条来源对照、项目维护者人工签核、可重复验证和真实 Codex 安装验收；两个核心 Skills 及其 173 条规则已正式启用。项目输出仍不能替代机关内部审核、审批或签发。
 
+`v0.2.0` 正在开发，计划新增通报、批复和函。新增派生规则当前为 `source_checked`，完成人工签核、行为验证和发布验收前不视为正式启用。
+
 ## 设计原则
 
 - **规范优先：** 权威规范优先于模型自身的生成习惯。
@@ -63,15 +65,18 @@ cn-official-doc-skills/
 - [规范来源与外部材料导入说明](standards/sources/README.md)
 - [贡献指南](CONTRIBUTING.md)
 - [更新日志](CHANGELOG.md)
+- [版本与发布流程](docs/releasing.md)
 
-## v0.1.0 规划
+## 已发布能力与后续规划
 
-首个版本计划提供两个核心 Skill：
+v0.1.0 提供两个核心 Skill：
 
 1. `official-document-drafting`：根据事实与适用规范编写、修改和优化机关文稿；
 2. `official-document-review`：对文种、结构、语言、逻辑、事实和中文合规性进行审核。
 
 首批支持通知、报告、请示三类文稿。大型案例库、完整表达语料库、Word 导出、MCP 服务和 Web 管理界面不属于首个版本范围。
+
+v0.2.0 在不增加新 Skill 数量的前提下，扩展通报、批复和函的起草与审核能力。候选能力必须复用或补充经过核验的权威来源，并通过人工签核后才能转为 `active`。
 
 两个 Skill 已完成首版发布验收。规则被标记为 `active` 只表示通过本项目的来源、复核和测试门禁，不表示具体文稿已经通过机关内部审核、审批或签发。
 

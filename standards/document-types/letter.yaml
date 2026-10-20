@@ -1,0 +1,157 @@
+schema_version: 1
+document_type:
+  id: letter
+  name: 函
+  category: statutory_document
+  source_definition:
+    source_id: SOURCE-001
+    locator: 第八条第十四项
+  applicable_scenarios:
+    - 不相隶属机关之间商洽工作
+    - 不相隶属机关之间询问和答复问题
+    - 不相隶属机关之间请求批准和答复审批事项
+  exclusions:
+    - id: EXCLUSION-LETTER-001
+      description: 存在上下级隶属关系时，不得只因语气平和而选择函；应按照行文目的判断请示、批复等文种。
+      basis:
+        source_id: SOURCE-001
+        locator: 第八条第十一项、第十二项、第十四项
+  rules:
+    - id: DOC-TYPE-LETTER-001
+      title: 函文种适用范围
+      level: mandatory
+      requirement: 函应当用于不相隶属机关之间商洽工作、询问和答复问题、请求批准和答复审批事项。
+      validation:
+        mode:
+          - semantic
+          - context_required
+        required_context:
+          - 发文机关
+          - 受文机关
+          - 是否相隶属
+          - 行文目的
+          - 请求或者答复事项
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第八条第十四项
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-LETTER-002
+      title: 函的机关关系必须核实
+      level: mandatory
+      requirement: 使用函必须确认发文机关与受文机关不相隶属；机关关系未知时应当补充背景，不得仅凭机关名称、行政级别或者行文语气推断。
+      validation:
+        mode:
+          - context_required
+          - human_review
+        required_context:
+          - 发文机关
+          - 受文机关
+          - 组织隶属关系
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第八条第十四项、第十四条
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-LETTER-003
+      title: 函的事项属于法定用途
+      level: mandatory
+      requirement: 函的核心目的应当能够明确归入商洽工作、询问问题、答复问题、请求批准或者答复审批事项；不能仅因希望语气平和、篇幅较短或者标题习惯而选择函。
+      validation:
+        mode:
+          - semantic
+          - context_required
+        required_context:
+          - 核心行文目的
+          - 请求或者答复事项
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第八条第十四项
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-LETTER-004
+      title: 函与请示批复的边界
+      level: mandatory
+      requirement: 向有隶属关系的上级机关请求指示或者批准，应当判断请示是否适用；答复下级机关请示事项，应当判断批复是否适用；不得以函规避上下级行文规则。
+      validation:
+        mode:
+          - semantic
+          - context_required
+        required_context:
+          - 机关关系
+          - 行文方向
+          - 请求或者答复事项
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第八条第十一项、第十二项、第十四项
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-LETTER-005
+      title: 复函针对来函事项明确答复
+      level: mandatory
+      requirement: 复函应当核对来函机关和来函事项，并针对询问、商洽、请求批准或者其他待答事项作出明确回应；不得答非所问或补造未确认意见。
+      validation:
+        mode:
+          - semantic
+          - context_required
+        required_context:
+          - 原来函
+          - 待答事项
+          - 已确认答复意见
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第八条第十四项、第十九条第一项、第三项
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-LETTER-006
+      title: 函的事项不得超越职权
+      level: mandatory
+      requirement: 商洽、询问、请求批准和答复事项应当符合发文机关职权；涉及其他地区或者部门职权时，必须征求意见并力求一致。
+      validation:
+        mode:
+          - context_required
+          - human_review
+        required_context:
+          - 发文机关职权
+          - 事项所属职权
+          - 涉及的其他地区或者部门
+          - 协商情况
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第十四条、第十九条第六项
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-LETTER-007
+      title: 函文种与信函格式分别判断
+      level: conditional
+      conditions:
+        - 文种判断或者版式审核涉及函或信函格式
+      requirement: 函是依据行文关系和目的确定的公文文种，信函格式是GB/T 9704规定的特定公文格式；不得仅因文种为函就推定必然采用信函格式，也不得仅因采用信函格式就推定文种必然为函。
+      validation:
+        mode:
+          - context_required
+          - human_review
+        required_context:
+          - 拟用文种
+          - 拟用公文格式
+          - 机关内部格式要求
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第八条第十四项
+        - source_id: SOURCE-002
+          locator: 第10.1条
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"

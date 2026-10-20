@@ -1,0 +1,33 @@
+schema_version: 1
+source_id: SOURCE-005
+reviewed_at: "2026-10-20"
+reviewer_type: agent
+status: source_checked
+
+identity:
+  status: passed
+  evidence: 首页载明广安府发〔2022〕1号、广安市人民政府、文件标题和2022年1月13日；正文说明2018年版工作规则同时废止。
+completeness:
+  status: passed
+  evidence: PDF共24页，页序完整，全文可以提取；第九章公文制度位于第14至16页。
+applicability:
+  status: restricted
+  evidence: 文件为广安市人民政府工作规则，仅适用于文件规定的广安市机关和报文场景，不得推广为全国通用要求。
+validity:
+  status: pending_human_verification
+  evidence: 已从广安市人民政府官网取得正式PDF，但尚需项目维护者确认截至发布版本时未被新规则替代。
+redistribution:
+  status: unknown
+  handling: 原始PDF仅存放于Git忽略目录，仓库只提交元数据、定位和原创结构化摘要。
+
+section_results:
+  - sections: 第九章第四十七条至第五十三条
+    status: source_checked
+    notes: 已逐条核对常用文种、报送、跨部门协商、审核签发、精文减会和限时办理要求。
+
+human_approval:
+  status: pending
+  required_checks:
+    - 核实文件现行有效状态
+    - 确认地方适用范围标注准确
+    - 复核候选规则摘要没有扩大原文含义

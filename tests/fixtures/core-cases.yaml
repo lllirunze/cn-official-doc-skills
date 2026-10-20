@@ -1,9 +1,9 @@
 schema_version: 1
-suite_id: v0.1-core-behavior
-status: human_approved
-source_checked_at: "2026-10-17"
-human_approval: approved
-human_approved_at: "2026-10-17"
+suite_id: v0.2-core-behavior
+status: source_checked
+source_checked_at: "2026-10-19"
+human_approval: pending
+human_approved_at: null
 
 cases:
   - id: CASE-DOC-TYPE-001
@@ -269,6 +269,285 @@ cases:
       severity: blocking
       findings: [不得原文转报下级请示, 应提出本机关倾向性意见]
     evaluation: context_required
+
+  - id: CASE-DOC-TYPE-007
+    capability: review
+    title: 一般部署事项误用通报
+    rule_ids: [DOC-TYPE-CIRCULAR-001, DOC-TYPE-CIRCULAR-002, DOC-TYPE-NOTICE-001]
+    context:
+      purpose: 向所属单位部署例行培训报名工作
+      commendation_or_criticism: false
+      important_spirit_or_situation: false
+    input: 文稿拟用通报，但正文仅列培训时间、地点和报名要求。
+    expected:
+      outcome: fail
+      severity: important
+      findings: [行文目的不属于通报法定适用范围, 应结合职权和受文对象判断是否使用通知]
+    forbidden: [仅因需要告知而认定通报适用]
+    evaluation: semantic_with_context
+
+  - id: CASE-DOC-TYPE-008
+    capability: drafting
+    title: 批复缺少已确认答复意见
+    rule_ids: [DOC-TYPE-REPLY-001]
+    context:
+      sender: 上级机关
+      addressee: 提交请示的下级机关
+      original_request_available: true
+      decision_confirmed: false
+    input: 请替上级机关起草批复，直接同意下级机关项目延期申请，但未提供有权机关的决定。
+    expected:
+      outcome: needs_context
+      severity: blocking
+      findings: [需要提供已经确认的答复意见]
+    forbidden: [擅自写成同意, 擅自写成不同意, 虚构审批依据]
+    evaluation: semantic_with_context
+
+  - id: CASE-DOC-TYPE-009
+    capability: review
+    title: 不相隶属机关商洽工作使用函
+    rule_ids: [DOC-TYPE-LETTER-001]
+    context:
+      sender: 某市业务主管部门
+      addressee: 同级另一业务主管部门
+      relationship: 不相隶属
+      purpose: 商洽联合开展专项调研
+    input: 关于商请联合开展专项调研的函
+    expected:
+      outcome: pass
+      findings: [机关关系和商洽目的符合函的适用范围]
+    forbidden: [仅因涉及请求而改判为请示]
+    evaluation: semantic_with_context
+
+  - id: CASE-DOC-TYPE-010
+    capability: review
+    title: 向直接上级请求批准误用函
+    rule_ids: [DOC-TYPE-LETTER-001, DOC-TYPE-LETTER-004, DOC-TYPE-REQUEST-001]
+    context:
+      sender: 下级机关
+      addressee: 直接上级机关
+      relationship: 上下级
+      purpose: 请求批准一个项目延期事项
+    input: 关于请求批准项目延期的函
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [上下级关系不符合函的不相隶属前提, 应判断是否使用请示]
+    forbidden: [仅因标题使用函而判定文种正确]
+    evaluation: semantic_with_context
+
+  - id: CASE-DOC-TYPE-011
+    capability: drafting
+    title: 批评通报缺少事实核验和机关决定
+    rule_ids: [DOC-TYPE-CIRCULAR-003, DOC-TYPE-CIRCULAR-004]
+    context:
+      evidence_status: unverified
+      responsibility_decision_confirmed: false
+      signature_status: unknown
+    input: 根据微信群里的情况说明，起草通报认定某单位负有全部责任并给予通报批评。
+    expected:
+      outcome: needs_context
+      severity: blocking
+      findings: [错误事实和责任结论尚未核实, 批评及处理意见未经有权机关确认]
+    forbidden: [把传闻写成确定事实, 自行认定责任, 自行作出处分或者处理决定]
+    evaluation: semantic_and_context_required
+
+  - id: CASE-DOC-TYPE-012
+    capability: review
+    title: 通报提出跨职权整改要求
+    rule_ids: [DOC-TYPE-CIRCULAR-005, ROUTING-GENERAL-002]
+    context:
+      sender_authority_covers_requirement: false
+      other_departments_involved: [部门乙]
+      consultation_completed: false
+    input: 部门甲拟在情况通报中要求部门乙改变其法定审批程序。
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [落实要求超出发文机关职权, 涉及其他部门职权但未完成协商]
+    evaluation: context_required
+
+  - id: CASE-DOC-TYPE-013
+    capability: review
+    title: 批复缺少原请示和机关关系
+    rule_ids: [DOC-TYPE-REPLY-002]
+    context:
+      original_request_available: false
+      relationship: unknown
+    input: 文稿标题为关于同意某项目的批复，但未提供来文机关和原请示。
+    expected:
+      outcome: needs_context
+      severity: blocking
+      findings: [无法确认存在下级机关请示事项, 需要核实机关隶属关系]
+    forbidden: [仅凭标题认定批复适用]
+    evaluation: context_required
+
+  - id: CASE-DOC-TYPE-014
+    capability: review
+    title: 批复答非所请并增加新决定
+    rule_ids: [DOC-TYPE-REPLY-003, DOC-TYPE-REPLY-004]
+    context:
+      original_request: 请求将项目验收期限延长三个月
+      confirmed_decision: 同意延期一个月
+    input: 批复同意延期六个月，并新增未经研究的专项资金安排。
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [答复与原请示及已确认决定不一致, 增加了未经请示和决定的新事项]
+    forbidden: [为了成稿完整自行扩展答复]
+    evaluation: semantic_with_context
+
+  - id: CASE-DOC-TYPE-015
+    capability: review
+    title: 批复涉及其他部门职权但未协商
+    rule_ids: [DOC-TYPE-REPLY-005]
+    context:
+      other_departments_involved: [部门乙, 部门丙]
+      consultation_completed: false
+    input: 拟直接批复改变部门乙、部门丙负责的办理程序。
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [涉及其他部门职权但尚未征求意见并协商一致]
+    evaluation: context_required
+
+  - id: CASE-DOC-TYPE-016
+    capability: review
+    title: 请示办理完成后无故未答复
+    rule_ids: [DOC-TYPE-REPLY-006, REG-ARTICLE-024]
+    context:
+      decision_completed: true
+      reply_sent: false
+      applicable_deadline: unknown
+    input: 来文已经办理完毕，但一直未向来文单位答复。
+    expected:
+      outcome: fail
+      severity: important
+      findings: [办理完成后应及时答复来文单位, 具体期限仍需核实适用制度]
+    forbidden: [凭空指定全国统一答复天数]
+    evaluation: context_required
+
+  - id: CASE-DOC-TYPE-017
+    capability: review
+    title: 机关关系未知时使用函
+    rule_ids: [DOC-TYPE-LETTER-002, DOC-TYPE-LETTER-003]
+    context:
+      relationship: unknown
+      purpose: unknown
+    input: 标题暂定为关于有关事项的函，未说明双方机关关系和具体行文目的。
+    expected:
+      outcome: needs_context
+      findings: [需要核实双方是否不相隶属, 需要明确商洽询问答复请求批准或答复审批等目的]
+    forbidden: [仅凭标题或语气认定函适用]
+    evaluation: context_required
+
+  - id: CASE-DOC-TYPE-018
+    capability: review
+    title: 复函答非所问并补造意见
+    rule_ids: [DOC-TYPE-LETTER-005]
+    context:
+      incoming_question: 是否同意联合开展检查
+      confirmed_reply: 尚未形成
+    input: 复函未回应联合检查事项，直接承诺拨付经费并安排人员。
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [未针对来函事项答复, 写入了未经确认的承诺]
+    evaluation: semantic_with_context
+
+  - id: CASE-DOC-TYPE-019
+    capability: review
+    title: 函涉及跨部门职权但未经协商
+    rule_ids: [DOC-TYPE-LETTER-006]
+    context:
+      sender_authority_covers_matter: false
+      other_department_involved: true
+      consultation_completed: false
+    input: 发文机关拟用函要求对方执行属于另一部门职权的审批安排。
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [事项超出发文机关职权, 涉及其他部门职权但未协商]
+    evaluation: context_required
+
+  - id: CASE-DOC-TYPE-020
+    capability: review
+    title: 函文种与信函格式被机械等同
+    rule_ids: [DOC-TYPE-LETTER-007, FORMAT-LETTER-001]
+    context:
+      document_type: 函
+      format_choice_confirmed: false
+    input: 审核意见称凡是函都必须使用GB/T 9704第10.1条信函格式。
+    expected:
+      outcome: fail
+      severity: important
+      findings: [函文种与信函格式是两个分别判断的问题, 需要确认实际采用的公文格式]
+    forbidden: [将函和信函格式无条件绑定]
+    evaluation: semantic_with_context
+
+  - id: CASE-LOCAL-GA-001
+    capability: review
+    title: 广安市地方规则不得全国化
+    rule_ids: [LOCAL-GA-ROUTING-001, LOCAL-GA-REVIEW-001]
+    context:
+      jurisdiction: unknown
+      sender: 某地政府部门
+      addressee: 某地政府
+    expected:
+      outcome: needs_context
+      findings: [需先确认是否适用广安市人民政府工作规则]
+    forbidden: [把广安市报文主体和渠道限制表述为全国统一要求]
+    evaluation: context_required
+
+  - id: CASE-LOCAL-GA-002
+    capability: review
+    title: 广安市跨部门请示协商逾期规则
+    rule_ids: [LOCAL-GA-CONSULT-001]
+    context:
+      jurisdiction: 四川省广安市
+      document_type: 请示
+      other_departments_involved: [相关部门]
+      consultation_sent: true
+      custom_deadline_set: false
+      working_days_elapsed: 6
+      response_received: false
+    expected:
+      outcome: local_rule_applies
+      findings: [一般回复期限已经超过5个工作日, 按地方规则逾期不回复视为无不同意见]
+    forbidden: [把5个工作日和逾期视为无不同意见推广到其他地区]
+    evaluation: context_required
+
+  - id: CASE-LOCAL-GA-003
+    capability: review
+    title: 广安市政府名义重要事项签发权限
+    rule_ids: [LOCAL-GA-SIGN-001]
+    context:
+      jurisdiction: 四川省广安市
+      issued_in_city_government_name: true
+      matter: 商请支持协调解决经济社会发展重要事项
+      proposed_signer: 一般业务人员
+    expected:
+      outcome: fail
+      severity: blocking
+      findings: [拟签发人不符合地方工作规则规定的签发权限]
+    evaluation: context_required
+
+  - id: CASE-LOCAL-GA-004
+    capability: review
+    title: 广安市重复发文和对应发文期限
+    rule_ids: [LOCAL-GA-REDUCE-001, LOCAL-GA-DEADLINE-001]
+    context:
+      jurisdiction: 四川省广安市
+      existing_document_still_applies: true
+      substantive_new_content: false
+      upper_document_type: 非规划类非法规性文件
+      months_since_upper_document: 7
+    expected:
+      outcome: fail
+      severity: important
+      findings: [现行文件已有部署且无实质新增内容, 对应发文超过地方规则原则期限]
+    forbidden: [把6个月期限推广到其他地区或其他上级文件类型]
+    evaluation: semantic_with_context
 
   - id: CASE-ROUTING-004
     capability: review

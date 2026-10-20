@@ -1,7 +1,8 @@
-"""Validate the v0.1 rule catalog, behavior fixtures, and plugin package."""
+"""Validate the rule catalog, behavior fixtures, and plugin package."""
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import tomllib
@@ -119,8 +120,8 @@ def evaluate_deterministic_case(case: dict[str, Any]) -> set[str]:
 
 def validate_rule_catalog() -> dict[str, dict[str, Any]]:
     rules = load_rule_catalog()
-    if len(rules) != 173:
-        raise AssertionError(f"规则总数应为173，实际为{len(rules)}")
+    if len(rules) < 173:
+        raise AssertionError(f"规则总数不得少于v0.1.0基线的173条，实际为{len(rules)}")
     for rule_id, entry in rules.items():
         review = entry["rule"].get("review")
         if not isinstance(review, dict) or review.get("status") not in ALLOWED_REVIEW_STATUSES:
@@ -133,13 +134,10 @@ def validate_behavior_coverage(rules: dict[str, dict[str, Any]]) -> None:
     if len(required) != len(set(required)):
         repeated = [key for key, count in Counter(required).items() if count > 1]
         raise AssertionError(f"核心规则清单存在重复：{repeated}")
-    if len(required) != 62:
-        raise AssertionError(f"首版核心规则应为62条，实际为{len(required)}")
-
     cases = load_behavior_cases()
     case_ids = [case["id"] for case in cases]
-    if len(cases) != 39 or len(case_ids) != len(set(case_ids)):
-        raise AssertionError("行为样例应为39个且编号唯一")
+    if len(cases) < 39 or len(case_ids) != len(set(case_ids)):
+        raise AssertionError("行为样例不得少于v0.1.0基线的39个且编号必须唯一")
 
     referenced = {rule_id for case in cases for rule_id in case.get("rule_ids", [])}
     unknown = referenced - set(rules)
@@ -172,13 +170,49 @@ def validate_behavior_coverage(rules: dict[str, dict[str, Any]]) -> None:
 def validate_source_gate() -> None:
     coverage = load_yaml(ROOT / "standards" / "sources" / "coverage.yaml")
     sources = coverage["sources"]
-    if len(sources) != 4:
-        raise AssertionError("v0.1必须登记四份规范来源")
+    if len(sources) < 4:
+        raise AssertionError("规范来源不得少于v0.1.0基线的四份")
     for source in sources:
         if source.get("extraction_status") != "complete":
             raise AssertionError(f"{source['source_id']} 尚未完成提取")
-        if source.get("review_status") not in {"human_approved", "active"}:
-            raise AssertionError(f"{source['source_id']} 尚未人工签核")
+        if source.get("review_status") not in {
+            "source_checked",
+            "human_approved",
+            "active",
+        }:
+            raise AssertionError(f"{source['source_id']} 缺少有效复核状态")
+    baseline = {source["source_id"]: source for source in sources}
+    for source_id in {"SOURCE-001", "SOURCE-002", "SOURCE-003", "SOURCE-004"}:
+        if baseline.get(source_id, {}).get("review_status") not in {
+            "human_approved",
+            "active",
+        }:
+            raise AssertionError(f"{source_id} 的v0.1.0基线尚未人工签核")
+
+
+def validate_example_catalog() -> None:
+    payload = load_yaml(ROOT / "corpus" / "examples" / "v0.2-examples.yaml")
+    examples = payload.get("examples", [])
+    example_ids = [item.get("id") for item in examples]
+    if len(examples) != 8 or len(example_ids) != len(set(example_ids)):
+        raise AssertionError("v0.2.0公开实例应为8份且编号唯一")
+    expected_types = {"通报", "批复", "函"}
+    actual_types = {item.get("document_type") for item in examples}
+    if actual_types != expected_types:
+        raise AssertionError(f"公开实例文种不完整：{sorted(actual_types)}")
+    for item in examples:
+        required = {
+            "title",
+            "authority",
+            "official_url",
+            "local_file",
+            "sha256",
+            "pages",
+            "observed_patterns",
+        }
+        missing = sorted(key for key in required if not item.get(key))
+        if missing:
+            raise AssertionError(f"{item['id']} 缺少元数据：{missing}")
 
 
 def validate_release_gate(rules: dict[str, dict[str, Any]]) -> None:
@@ -227,14 +261,24 @@ def validate_plugin_package() -> None:
         raise AssertionError(f"插件 Skill 集合不符合v0.1范围：{sorted(skill_names)}")
 
 
-def validate_all() -> None:
+def validate_all(*, release: bool = False) -> None:
     rules = validate_rule_catalog()
     validate_behavior_coverage(rules)
     validate_source_gate()
-    validate_release_gate(rules)
+    validate_example_catalog()
     validate_plugin_package()
+    if release:
+        validate_release_gate(rules)
 
 
 if __name__ == "__main__":
-    validate_all()
-    print("v0.1 repository validation passed")
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--release",
+        action="store_true",
+        help="同时执行仅允许active规则的正式发布门禁",
+    )
+    args = parser.parse_args()
+    validate_all(release=args.release)
+    mode = "release" if args.release else "development"
+    print(f"repository {mode} validation passed")

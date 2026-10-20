@@ -1,6 +1,6 @@
 ---
 name: official-document-review
-description: 审核中文党政机关公文和机关文稿的文种、行文关系、结构格式、标点数字、事实可靠性及待核实事项。适用于通知、报告、请示及一般公文审核；不代替机关内部审核、审批或签发。
+description: 审核中文党政机关公文和机关文稿的文种、行文关系、结构格式、标点数字、事实可靠性及待核实事项。适用于通知、通报、报告、请示、批复、函及一般公文审核；不代替机关内部审核、审批或签发。
 ---
 
 # 中文机关文稿审核
@@ -29,7 +29,7 @@ description: 审核中文党政机关公文和机关文稿的文种、行文关�
 
 ## 审核方式
 
-按 [审核工作流](references/review-workflow.md) 执行。需要判定通知、报告或请示时，读取 [文种与行文检查](references/document-types-and-routing.md)。需要输出结果时，使用 [审核报告模板](assets/review-report-template.md)。
+按 [审核工作流](references/review-workflow.md) 执行。需要判定通知、通报、报告、请示、批复或函时，读取 [文种与行文检查](references/document-types-and-routing.md)。需要输出结果时，使用 [审核报告模板](assets/review-report-template.md)。
 
 审核至少覆盖：
 

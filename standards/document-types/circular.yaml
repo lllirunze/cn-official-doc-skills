@@ -1,0 +1,119 @@
+schema_version: 1
+document_type:
+  id: circular
+  name: 通报
+  category: statutory_document
+  source_definition:
+    source_id: SOURCE-001
+    locator: 第八条第九项
+  applicable_scenarios:
+    - 表彰先进
+    - 批评错误
+    - 传达重要精神
+    - 告知重要情况
+  exclusions:
+    - id: EXCLUSION-CIRCULAR-001
+      description: 仅需部署执行或者一般周知的事项，不能仅因需要告知而机械使用通报，应结合行文目的判断通知、通报等文种。
+      basis:
+        source_id: SOURCE-001
+        locator: 第八条第八项、第九项
+  rules:
+    - id: DOC-TYPE-CIRCULAR-001
+      title: 通报文种适用范围
+      level: mandatory
+      requirement: 通报应当用于表彰先进、批评错误、传达重要精神或者告知重要情况。
+      validation:
+        mode:
+          - semantic
+          - context_required
+        required_context:
+          - 发文目的
+          - 需要通报的事实或者精神
+          - 发文机关
+          - 受文对象
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第八条第九项
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-CIRCULAR-002
+      title: 通报与通知的文种边界
+      level: mandatory
+      requirement: 以部署执行、一般周知或者批转转发为主要目的时，应当判断通知是否适用；只有符合表彰先进、批评错误、传达重要精神或者告知重要情况等目的时，才使用通报。
+      validation:
+        mode:
+          - semantic
+          - context_required
+        required_context:
+          - 核心行文目的
+          - 是否包含执行部署
+          - 是否属于重要精神或者重要情况
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第八条第八项、第九项
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-CIRCULAR-003
+      title: 表彰批评和情况结论必须有事实依据
+      level: mandatory
+      requirement: 通报中的先进事迹、错误事实、责任评价、重要情况、数据和处理结论必须来自已经核实的事实，不得根据传闻、零散信息或者用户未确认的推断补写。
+      validation:
+        mode:
+          - semantic
+          - context_required
+          - human_review
+        required_context:
+          - 事实材料及其核验状态
+          - 数据来源
+          - 评价或者处理结论的形成依据
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第五条、第十九条第二项、第五项
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-CIRCULAR-004
+      title: 表彰批评和处理意见体现机关真实意图
+      level: mandatory
+      requirement: 涉及表彰、批评、责任认定或者处理意见的内容，必须体现发文机关已经确认的意图并履行相应审核签发程序；不得由起草者代替有权机关作出决定。
+      validation:
+        mode:
+          - context_required
+          - human_review
+        required_context:
+          - 发文机关职权
+          - 机关确认意见
+          - 审核签发状态
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第十九条第一项、第二十条、第二十二条
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"
+
+    - id: DOC-TYPE-CIRCULAR-005
+      title: 通报中的落实要求不得超越职权
+      level: conditional
+      conditions:
+        - 通报同时提出知悉、整改、借鉴或者落实要求
+      requirement: 相关要求必须属于发文机关职权范围，并根据真实机关关系确定受文对象；涉及其他地区或者部门职权时，应当征求意见并力求一致。
+      validation:
+        mode:
+          - context_required
+          - human_review
+        required_context:
+          - 发文机关职权
+          - 受文对象及隶属关系
+          - 涉及的其他地区或者部门
+          - 协商情况
+      source_refs:
+        - source_id: SOURCE-001
+          locator: 第十四条、第十九条第六项
+      review:
+        status: source_checked
+        source_checked_at: "2026-10-19"

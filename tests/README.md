@@ -1,6 +1,6 @@
 # 测试体系
 
-v0.1.0 先使用结构化行为样例验证规则和 Skills，不把固定措辞当作通过条件。
+项目使用结构化行为样例验证规则和 Skills，不把固定措辞当作通过条件。
 
 每个样例至少包含：
 
@@ -11,7 +11,7 @@ v0.1.0 先使用结构化行为样例验证规则和 Skills，不把固定措辞
 - 不允许出现的行为；
 - 判断方式和是否需要人工确认。
 
-`fixtures/core-cases.yaml` 保存39个高风险样例，覆盖 `coverage.yaml` 确定的全部62条首版核心规则。后续自动化测试应验证可观察行为，例如是否识别一文多事、是否拒绝编造文号，而不是匹配模型输出的固定句子。
+`fixtures/core-cases.yaml` 保存高风险样例，覆盖 `coverage.yaml` 确定的当前版本核心规则。后续自动化测试应验证可观察行为，例如是否识别一文多事、是否拒绝编造文号，而不是匹配模型输出的固定句子。
 
 ## 执行
 
@@ -21,6 +21,14 @@ v0.1.0 先使用结构化行为样例验证规则和 Skills，不把固定措辞
 python -m pytest
 python scripts/validate_repository.py
 ```
+
+开发验证允许新增规则处于 `source_checked` 或 `human_approved`。准备正式发布时还必须运行严格门禁：
+
+```bash
+python scripts/validate_repository.py --release
+```
+
+严格门禁要求全部规则均为 `active`；它在开发中的候选规则尚未完成人工签核时失败是预期行为。
 
 未安装 `pytest` 时，也可以使用标准库测试入口：
 

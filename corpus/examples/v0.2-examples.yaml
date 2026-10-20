@@ -1,0 +1,123 @@
+schema_version: 1
+collection_id: v0.2-document-type-examples
+status: source_checked
+reviewed_at: "2026-10-20"
+policy:
+  role: 公开正式文稿仅用于结构观察、边界分析和行为测试，不作为全国强制规范来源。
+  redistribution: 原始PDF许可状态不明，保存在Git忽略目录；仓库仅提交元数据和原创分析。
+  privacy: 示例中的个人电话、邮箱和联系人不得复制到测试输入或生成模板。
+
+examples:
+  - id: EXAMPLE-001
+    document_type: 通报
+    subtype: 表扬典型经验
+    title: 国务院办公厅关于对国务院第七次大督查发现的典型经验做法给予表扬的通报
+    authority: 国务院办公厅
+    document_number: 国办发〔2020〕46号
+    issued_at: "2020-11-19"
+    official_url: https://www.beijing.gov.cn/zhengce/gwywj/202011/t20201123_2143464.html
+    local_file: ../../standards/sources/originals/EXAMPLE-001-国务院办公厅表扬通报.pdf
+    sha256: 79c939b280b8d730a879f35a031d30f011f937eb1ea3eb30ae071b8395cf0632
+    pages: 4
+    capture_type: official_webpage_print
+    observed_patterns: [说明督查背景和事实基础, 明确通报表扬决定, 提出学习借鉴和落实要求, 以附件列明具体项目]
+
+  - id: EXAMPLE-002
+    document_type: 通报
+    subtype: 考核评估结果
+    title: 上海市人民政府办公厅关于2025年度办理市人大代表建议和政协提案工作考核评估结果的通报
+    authority: 上海市人民政府办公厅
+    document_number: 沪府办字〔2026〕2号
+    issued_at: "2026-01-30"
+    official_url: https://www.shanghai.gov.cn/nw12344/20260211/50d9f874732f4b5086cb979ca9242d24.html
+    local_file: ../../standards/sources/originals/EXAMPLE-002-上海市办理建议提案考核通报.pdf
+    sha256: b24baa36b09ec2136e785200ed3b52c21824d9a2dce95b50fe4b5faf8fd64148
+    pages: 4
+    capture_type: official_pdf
+    observed_patterns: [交代考核依据和评估过程, 明确优秀和表扬对象, 提出后续导向要求, 名单作为附件]
+
+  - id: EXAMPLE-003
+    document_type: 批复
+    subtype: 规划批复
+    title: 国务院公报2024年第28号所载国务院批复
+    authority: 国务院办公厅
+    document_number: 国务院公报2024年第28号
+    issued_at: "2024"
+    official_url: https://www.gov.cn/gongbao/2024/issue_11626/material/gwygb202428.pdf
+    local_file: ../../standards/sources/originals/EXAMPLE-003-国务院公报2024年第28号.pdf
+    sha256: 9b3b5973622d5bc7f43d3bdbf81149e839b15577a866e9ca98de1ef93fe39e77
+    pages: 53
+    capture_type: official_gazette_pdf
+    observed_patterns: [引述报请批准的请示, 明确原则同意内容, 分项提出实施和监督要求]
+
+  - id: EXAMPLE-004
+    document_type: 批复
+    subtype: 请示批复配对
+    title: 沂水县人民政府关于同意沂水县部分乡村道路和城区道路命名的批复
+    authority: 沂水县人民政府
+    document_number: 沂政字〔2025〕99号
+    issued_at: "2025-08-31"
+    official_url: https://www.yishui.gov.cn/info/128943/428556.htm
+    local_file: ../../standards/sources/originals/EXAMPLE-004-沂水县道路命名请示与批复.pdf
+    sha256: e0b30d3bf1d37b42f84d3f73ff83428ff9054e17d18abd8eb16cefe1fbb0c293
+    pages: 31
+    capture_type: official_webpage_print_with_request_attachment
+    observed_patterns: [批复引述原请示, 原请示与批复同页公开, 答复对应道路命名请求, 后续办理涉及相关乡镇部门]
+    privacy_note: 网页打印包含公开联系人和电话，测试与模板不得复制。
+
+  - id: EXAMPLE-005
+    document_type: 批复
+    subtype: 原则同意
+    title: 建湖县人民政府关于同意《关于改变部分国有粮油仓储物流设施用途的请示》的批复
+    authority: 建湖县人民政府
+    document_number: 建政复〔2025〕14号
+    issued_at: "2025-05-26"
+    official_url: https://www.jianhu.gov.cn/art/2025/5/26/art_32123_4325317.html
+    local_file: ../../standards/sources/originals/EXAMPLE-005-建湖县粮油设施用途批复.pdf
+    sha256: e8de2e792a5a6fc04c3cace0279e537a82716829c6ff86f9d472bc32b4a99d82
+    pages: 1
+    capture_type: official_webpage_print
+    observed_patterns: [引述请示标题, 说明答复背景, 使用原则同意表达, 提出后续办理要求]
+
+  - id: EXAMPLE-006
+    document_type: 函
+    subtype: 商洽征求意见
+    title: 商请提出《福建省农村自建房建设质量安全和建筑风貌管理办法（征求意见稿）》修改意见的函
+    authority: 福建省住房和城乡建设厅
+    document_number: 闽建村函〔2022〕18号
+    issued_at: "2022-09-25"
+    official_url: https://zjt.fujian.gov.cn/xxgk/zfxxgkzl/xxgkml/dfxfgzfgzhgfxwj/czjs_3793/202209/t20220927_6007370.htm
+    local_file: ../../standards/sources/originals/EXAMPLE-006-福建省住建厅征求意见函.pdf
+    sha256: 47887e2a45497407555d956a37e09b6632db51d772912c7779e1ef0a4f116894
+    pages: 16
+    capture_type: official_pdf_with_draft_attachment
+    observed_patterns: [说明征求意见背景, 明确反馈内容和期限, 附征求意见稿]
+    privacy_note: 正文含个人电话和邮箱，测试与模板不得复制。
+
+  - id: EXAMPLE-007
+    document_type: 函
+    subtype: 复函
+    title: 关于《关于商请支持上海新华钢铁有限公司码头环境综合整治工作的函》的复函
+    authority: 上海市崇明区生态环境局
+    document_number: 沪崇环函〔2022〕18号
+    issued_at: "2022-10-08"
+    official_url: https://www.shcm.gov.cn/govxxgk/qsthjj/2022-10-08/1fd95004-312d-4efc-86a8-64da63fc20ed.html
+    local_file: ../../standards/sources/originals/EXAMPLE-007-崇明区生态环境局复函.pdf
+    sha256: 73e76ba74476545c8c85e5c4ca83da2591d3a7357368742e038138c914e2b4f2
+    pages: 2
+    capture_type: official_pdf
+    observed_patterns: [引述来函标题和文号, 说明答复角度, 分项回应具体事项, 使用特此函复结语]
+
+  - id: EXAMPLE-008
+    document_type: 函
+    subtype: 解释答复
+    title: 国务院办公厅政府信息与政务公开办公室关于政府信息公开申请接收渠道问题的解释
+    authority: 国务院办公厅政府信息与政务公开办公室
+    document_number: 国办公开办函〔2017〕19号
+    issued_at: "2017-07-05"
+    official_url: https://tianjin.chinatax.gov.cn/11200000000/0100/010006/01000601/20200717174512438.shtml?fjdm=11200000000
+    local_file: ../../standards/sources/originals/EXAMPLE-008-国办公开办解释函.pdf
+    sha256: 3797498a2deda00367d8c3fdbce562216a02d3e8bf1f76c7a0feff8e66ef058e
+    pages: 2
+    capture_type: official_webpage_print
+    observed_patterns: [引述来函标题和文号, 说明研究和征求意见过程, 分项作出明确解释]

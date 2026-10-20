@@ -1,15 +1,15 @@
 schema_version: 1
-release: v0.1.0
-status: human_approved
-human_approval: approved
-human_approved_at: "2026-10-17"
+release: v0.2.0-dev
+status: source_checked
+human_approval: pending
+human_approved_at: null
 
 policy:
-  behavior_test_required: 直接影响通知、报告、请示起草与审核结果的规则
+  behavior_test_required: 直接影响通知、通报、报告、请示、批复、函起草与审核结果的规则
   source_check_only:
     - 条例总则、组织保障、收发办理、归档、保密管理、机构变动和附则
     - 物理纸张、印刷和装订生产指标
-    - v0.1.0不支持的信函、命令（令）、纪要和横排表格特定格式
+    - v0.2.0不支持的命令（令）、纪要和横排表格特定格式
     - 竖排文本及出版物专用的低频标点数字规则
   duplicate_coverage_records: REG-ARTICLE系列用于证明条例条款完整覆盖，不重复要求每条建立Skill行为样例。
 
@@ -18,6 +18,24 @@ required_rule_ids:
     - DOC-TYPE-NOTICE-001
     - DOC-TYPE-REPORT-001
     - DOC-TYPE-REQUEST-001
+    - DOC-TYPE-CIRCULAR-001
+    - DOC-TYPE-CIRCULAR-002
+    - DOC-TYPE-CIRCULAR-003
+    - DOC-TYPE-CIRCULAR-004
+    - DOC-TYPE-CIRCULAR-005
+    - DOC-TYPE-REPLY-001
+    - DOC-TYPE-REPLY-002
+    - DOC-TYPE-REPLY-003
+    - DOC-TYPE-REPLY-004
+    - DOC-TYPE-REPLY-005
+    - DOC-TYPE-REPLY-006
+    - DOC-TYPE-LETTER-001
+    - DOC-TYPE-LETTER-002
+    - DOC-TYPE-LETTER-003
+    - DOC-TYPE-LETTER-004
+    - DOC-TYPE-LETTER-005
+    - DOC-TYPE-LETTER-006
+    - DOC-TYPE-LETTER-007
     - ROUTING-REPORT-001
     - ROUTING-REQUEST-001
     - ROUTING-REQUEST-002
@@ -82,6 +100,13 @@ required_rule_ids:
     - NUMBER-APPROX-PUNCT-001
     - NUMBER-ZERO-001
     - NUMBER-MIXED-001
+  local_guangan:
+    - LOCAL-GA-ROUTING-001
+    - LOCAL-GA-CONSULT-001
+    - LOCAL-GA-REVIEW-001
+    - LOCAL-GA-SIGN-001
+    - LOCAL-GA-REDUCE-001
+    - LOCAL-GA-DEADLINE-001
 
 acceptance:
   - 每个required_rule_id至少被一个行为样例引用
